@@ -1,0 +1,145 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'openseadragon',
+1 verbose cli   'openseadragon-annotations',
+1 verbose cli   '--save-dev' ]
+2 info using npm@3.5.2
+3 info using node@v4.7.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData openseadragon
+8 silly fetchPackageMetaData openseadragon-annotations
+9 silly fetchNamedPackageData openseadragon
+10 silly mapToRegistry name openseadragon
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry uri https://registry.npmjs.org/openseadragon
+14 silly fetchNamedPackageData openseadragon-annotations
+15 silly mapToRegistry name openseadragon-annotations
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/openseadragon-annotations
+19 verbose request uri https://registry.npmjs.org/openseadragon
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 11:42:57 AM
+22 verbose request id 471a9c65cdcb6331
+23 http request GET https://registry.npmjs.org/openseadragon
+24 verbose request uri https://registry.npmjs.org/openseadragon-annotations
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 11:42:57 AM
+27 http request GET https://registry.npmjs.org/openseadragon-annotations
+28 http 200 https://registry.npmjs.org/openseadragon
+29 verbose headers { server: 'nginx/1.10.3',
+29 verbose headers   'content-type': 'application/json',
+29 verbose headers   'last-modified': 'Tue, 19 Sep 2017 16:57:32 GMT',
+29 verbose headers   etag: 'W/"59c14c7c-26a9"',
+29 verbose headers   'content-encoding': 'gzip',
+29 verbose headers   'cache-control': 'max-age=300',
+29 verbose headers   'content-length': '2056',
+29 verbose headers   'accept-ranges': 'bytes',
+29 verbose headers   date: 'Thu, 12 Oct 2017 18:42:57 GMT',
+29 verbose headers   via: '1.1 varnish',
+29 verbose headers   age: '0',
+29 verbose headers   connection: 'keep-alive',
+29 verbose headers   'x-served-by': 'cache-bur17528-BUR',
+29 verbose headers   'x-cache': 'MISS',
+29 verbose headers   'x-cache-hits': '0',
+29 verbose headers   'x-timer': 'S1507833777.157830,VS0,VE132',
+29 verbose headers   vary: 'Accept-Encoding, Accept' }
+30 silly get cb [ 200,
+30 silly get   { server: 'nginx/1.10.3',
+30 silly get     'content-type': 'application/json',
+30 silly get     'last-modified': 'Tue, 19 Sep 2017 16:57:32 GMT',
+30 silly get     etag: 'W/"59c14c7c-26a9"',
+30 silly get     'content-encoding': 'gzip',
+30 silly get     'cache-control': 'max-age=300',
+30 silly get     'content-length': '2056',
+30 silly get     'accept-ranges': 'bytes',
+30 silly get     date: 'Thu, 12 Oct 2017 18:42:57 GMT',
+30 silly get     via: '1.1 varnish',
+30 silly get     age: '0',
+30 silly get     connection: 'keep-alive',
+30 silly get     'x-served-by': 'cache-bur17528-BUR',
+30 silly get     'x-cache': 'MISS',
+30 silly get     'x-cache-hits': '0',
+30 silly get     'x-timer': 'S1507833777.157830,VS0,VE132',
+30 silly get     vary: 'Accept-Encoding, Accept' } ]
+31 verbose get saving openseadragon to /home/harryzhang/.npm/registry.npmjs.org/openseadragon/.cache.json
+32 http 200 https://registry.npmjs.org/openseadragon-annotations
+33 verbose headers { server: 'nginx/1.10.3',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'last-modified': 'Mon, 17 Jul 2017 00:44:10 GMT',
+33 verbose headers   etag: 'W/"596c085a-3795"',
+33 verbose headers   'content-encoding': 'gzip',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '3375',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Thu, 12 Oct 2017 18:42:57 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   age: '0',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-bur17521-BUR',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1507833777.156950,VS0,VE134',
+33 verbose headers   vary: 'Accept-Encoding, Accept' }
+34 silly get cb [ 200,
+34 silly get   { server: 'nginx/1.10.3',
+34 silly get     'content-type': 'application/json',
+34 silly get     'last-modified': 'Mon, 17 Jul 2017 00:44:10 GMT',
+34 silly get     etag: 'W/"596c085a-3795"',
+34 silly get     'content-encoding': 'gzip',
+34 silly get     'cache-control': 'max-age=300',
+34 silly get     'content-length': '3375',
+34 silly get     'accept-ranges': 'bytes',
+34 silly get     date: 'Thu, 12 Oct 2017 18:42:57 GMT',
+34 silly get     via: '1.1 varnish',
+34 silly get     age: '0',
+34 silly get     connection: 'keep-alive',
+34 silly get     'x-served-by': 'cache-bur17521-BUR',
+34 silly get     'x-cache': 'MISS',
+34 silly get     'x-cache-hits': '0',
+34 silly get     'x-timer': 'S1507833777.156950,VS0,VE134',
+34 silly get     vary: 'Accept-Encoding, Accept' } ]
+35 verbose get saving openseadragon-annotations to /home/harryzhang/.npm/registry.npmjs.org/openseadragon-annotations/.cache.json
+36 silly install normalizeTree
+37 silly loadCurrentTree Finishing
+38 silly loadIdealTree Starting
+39 silly install loadIdealTree
+40 silly cloneCurrentTree Starting
+41 silly install cloneCurrentTreeToIdealTree
+42 silly cloneCurrentTree Finishing
+43 silly loadShrinkwrap Starting
+44 silly install loadShrinkwrap
+45 silly loadShrinkwrap Finishing
+46 silly loadAllDepsIntoIdealTree Starting
+47 silly install loadAllDepsIntoIdealTree
+48 silly rollbackFailedOptional Starting
+49 silly rollbackFailedOptional Finishing
+50 silly runTopLevelLifecycles Starting
+51 silly runTopLevelLifecycles Finishing
+52 silly install printInstalled
+53 verbose stack Error: Refusing to install openseadragon-annotations as a dependency of itself
+53 verbose stack     at checkSelf (/usr/share/npm/lib/install/validate-args.js:40:14)
+53 verbose stack     at Array.<anonymous> (/usr/share/npm/node_modules/slide/lib/bind-actor.js:15:8)
+53 verbose stack     at LOOP (/usr/share/npm/node_modules/slide/lib/chain.js:15:14)
+53 verbose stack     at chain (/usr/share/npm/node_modules/slide/lib/chain.js:20:5)
+53 verbose stack     at /usr/share/npm/lib/install/validate-args.js:15:5
+53 verbose stack     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:35
+53 verbose stack     at Array.forEach (native)
+53 verbose stack     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:11
+53 verbose stack     at Array.forEach (native)
+53 verbose stack     at asyncMap (/usr/share/npm/node_modules/slide/lib/async-map.js:51:8)
+54 verbose cwd /home/harryzhang/Downloads/openseadragon-bin-2.3.1/demo
+55 error Linux 4.10.0-37-generic
+56 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "openseadragon" "openseadragon-annotations" "--save-dev"
+57 error node v4.7.2
+58 error npm  v3.5.2
+59 error code ENOSELF
+60 error Refusing to install openseadragon-annotations as a dependency of itself
+61 error If you need help, you may report this error at:
+61 error     <https://github.com/npm/npm/issues>
+62 verbose exit [ 1, true ]
