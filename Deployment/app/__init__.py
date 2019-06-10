@@ -1,228 +1,130 @@
-import schedule
-from shutil import copyfile
 import os.path
-from flask import Flask, abort, make_response, render_template, url_for, request
-from io import BytesIO
-import openslide
-from openslide import OpenSlide
-from openslide.deepzoom import DeepZoomGenerator
-from optparse import OptionParser
-import pymssql
-import sqlalchemy
-from PIL import Image
-import atexit
+import sys
+import flask
+from flask_uploads import UploadSet, IMAGES, configure_uploads, ALL
+from flask import Flask, render_template, request
+import time
+import cv2
+import numpy as np
+import config
+from werkzeug.utils import secure_filename
+from model import Pytorchmodel
 
 
-DEEPZOOM_SLIDE = None
-DEEPZOOM_MASK = None
-DEEPZOOM_FORMAT = 'jpeg'
-DEEPZOOM_TILE_SIZE = 256
-DEEPZOOM_OVERLAP = 1
-DEEPZOOM_LIMIT_BOUNDS = True
-DEEPZOOM_TILE_QUALITY = 40
-SLIDE_NAME = 'slide'
-Image.MAX_IMAGE_PIXELS = None
-
+zichen_model_dir = os.path.join(os.getcwd(), r'code_zichen')
+sys.path.insert(0, zichen_model_dir)
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+print(sys.path)
 
 app = Flask(__name__)
-app.config.from_object(__name__)
-app.config.from_envvar('DEEPZOOM_TILER_SETTINGS', silent=True)
-
-# SQL configurations string
-engine = sqlalchemy.create_engine('mssql+pymssql://IDRReadOnly:yCy*X&c5LbOal5Y7G83$@10.32.159.137:1433/Aperio')
-
-
-class PILBytesIO(BytesIO):
-    def fileno(self):
-        '''Classic PIL doesn't understand io.UnsupportedOperation.'''
-        raise AttributeError('Not supported')
+app.config.from_object(config)
+app.config.from_object(config)
+photos = UploadSet('PHOTO')
+configure_uploads(app, photos)
 
 
-@app.before_first_request
-def preload_slide():
-    app.config['DEEPZOOM_SLIDE'] = '/home/harry/1302.svs'
-    slidefile = app.config['DEEPZOOM_SLIDE']
-    #maskfile = app.config['DEEPZOOM_MASK']
-    if slidefile is None:
-        raise ValueError('No slide file specified')
-    config_map = {
-        'DEEPZOOM_TILE_SIZE': 'tile_size',
-        'DEEPZOOM_OVERLAP': 'overlap',
-        'DEEPZOOM_LIMIT_BOUNDS': 'limit_bounds',
-    }
-    opts = dict((v, app.config[k]) for k, v in config_map.items())
-    osr = OpenSlide(slidefile)
-    #mask = OpenSlide(maskfile)
-    app.slide = DeepZoomGenerator(osr, **opts)
-    #app.mask = DeepZoomGenerator(mask, **opts)
-    app.slide.name = app.config['DEEPZOOM_SLIDE'][-8:-4]
-    app.slide.properties = osr.properties
-    app.slide_path = slidefile
-    try:
-        mpp_x = osr.properties[openslide.PROPERTY_NAME_MPP_X]
-        mpp_y = osr.properties[openslide.PROPERTY_NAME_MPP_Y]
-        app.slide.mpp = (float(mpp_x) + float(mpp_y)) / 2
-    except (KeyError, ValueError):
-        app.slide.mpp = 0
-    return app.slide
+@app.route('/upload_image', methods=['POST', 'GET'])
+def upload():
+    """upload function is the main function page of this application. It takes uploaded
+    image and run predict_image, then return the result back to front-end
+    input -- None
+
+    Parameters:
+        img: uploaded image from user
+        data: predicted result
+
+    Returns:
+         render_template("upload.html") -- render the page with variable img_path and result pass to front-end
+    """
+    if request.method == 'POST':
+        img = request.files['img'].filename
+        img = secure_filename(img)
+        new_name = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime()) + '_' + img
+        filename = photos.save(request.files['img'], name=new_name)
+        data = predict_img(photos.path(filename), is_numpy=False)
+        img_path = photos.url(filename)
+        return flask.jsonify({"result": data, "img_path": img_path})
+    else:
+        img_path = None
+        result = []
+    return render_template('upload.html', img_path=img_path, result=result)
 
 
-@app.route('/image_metadata', methods=['POST'])
-def get_metadata():
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    """Initialize the data dictionary that will be returned from the view
+    ensure the image is properly uploaded to the folder
+    read in the image from string and preprocess the image
+    call function: predict_img()
 
-    if not request.json:
-        abort(400)
-    accession_number = request.json['accession_number']
-    if accession_number:
-        query = "select ROW_NUMBER() OVER(ORDER BY (SELECT 100)) as row, " \
-                "substring(CompressedFileLocation,28, len(CompressedFileLocation)) as path " \
-                "from dbo.Image where ParentId IN " \
-                "(select Id from dbo.Slide WHERE dbo.Slide.ParentId IN " \
-                "(select Id from dbo.Specimen WHERE ColumnUCLASpecimen ='" + str(accession_number) + "'))"
-
-        with engine.connect() as con:
-            query_result = con.execute(query)
-            # dict to store all paths for each accession number
-            resultset = [dict(row) for row in query_result]
-            for i, string in enumerate(resultset):
-                resultset[i]['path'] = resultset[i]['path'].replace("\\", "/")
-
-            if resultset is None:
-                abort(404)
-            else:
-                app.slide_path = resultset
-            src = '/media/' + resultset[0]['path']
-            dst = '/home/temp/' + resultset[0]['path'].split('/')[-1]
-            copyfile(src, dst)
-            app.config['DEEPZOOM_SLIDE'] = dst
-    try:
-        load_slide()
-        return 'OK'
-    except(KeyError, ValueError):
-        abort(404)
+    Returns:
+        flask.jsonify(data) -- json version of prediction values
+    """
+    data = {'state': False}
+    if request.method == 'POST':
+        img = request.files['image'].read()
+        img = np.fromstring(img, np.uint8)
+        img = cv2.imdecode(img, flags=1)
+        data = predict_img(img, is_numpy=False)
+    return flask.jsonify(data)
 
 
-@app.route('/load_slide')
-def load_slide():
-    slidefile = app.config['DEEPZOOM_SLIDE']
-    # maskfile = app.config['DEEPZOOM_MASK']
-    if slidefile is None:
-        raise ValueError('No slide file specified')
-    config_map = {
-        'DEEPZOOM_TILE_SIZE': 'tile_size',
-        'DEEPZOOM_OVERLAP': 'overlap',
-        'DEEPZOOM_LIMIT_BOUNDS': 'limit_bounds',
-    }
-    opts = dict((v, app.config[k]) for k, v in config_map.items())
-    osr = OpenSlide(slidefile)
-    # mask = OpenSlide(maskfile)
-    app.slide = DeepZoomGenerator(osr, **opts)
-    # app.mask = DeepZoomGenerator(mask, **opts)
-    app.slide.name = app.config['DEEPZOOM_SLIDE'].split('/')[-1]
-    app.slide.properties = osr.properties
-    try:
-        mpp_x = osr.properties[openslide.PROPERTY_NAME_MPP_X]
-        mpp_y = osr.properties[openslide.PROPERTY_NAME_MPP_Y]
-        app.slide.mpp = (float(mpp_x) + float(mpp_y)) / 2
-    except (KeyError, ValueError):
-        app.slide.mpp = 0
-    return app.slide
+def predict_img(img, is_numpy=False):
+    """run pytorch model prediction and get the output probablity and label result
+    to be called by predict()
 
+    Args:
+        is_numpy -- pass to model.predict
 
-@app.route('/update_path', methods=['POST'])
-def update_path():
-    selected_path = request.form['selected_path']
-    dst = '/home/temp' + selected_path.split('/')[-1]
-    if not os.path.isfile(dst):
-        src = '/media/' + selected_path
-        copyfile(src, dst)
-    app.config['DEEPZOOM_SLIDE'] = dst
-    print(app.config['DEEPZOOM_SLIDE'])
-    #pdb.set_trace()
-    try:
-        app.slide = load_slide()
-        slide_url = url_for('dzi', path=app.slide.name)
-        print(slide_url)
-        return render_template('demo.html', slide_url=slide_url, properties=app.slide.properties,
-                               slide_path=app.slide_path, slide_mpp=app.slide.mpp)
-    except(KeyError, ValueError):
-        abort(404)
+    Returns:
+         data -- prediction values
+    """
+    data = dict()
+    start = time.time()
+    result = model.predict(img, is_numpy=is_numpy)
+    cost_time = time.time() - start
+    data['predictions'] = list()
+    for label, prob in result:
+        m_predict = {'label': label, 'probability': ("%.4f" % prob)}
+        data['predictions'].append(m_predict)
+    data['state'] = True
+    data['time'] = cost_time
+    return data
 
 
 @app.route('/')
 def index():
-    slide_url = url_for('dzi', path=app.slide.name)
-    # mask_url = url_for('mask', mask_path=app.slide.name+"pred")
-    return render_template('demo.html', slide_url=slide_url, properties=app.slide.properties,
-                           slide_path=app.slide_path, slide_mpp=app.slide.mpp)
+    """render initial page
+
+    Returns:
+        render initial index.html loading page
+    """
+    return render_template('index.html')
 
 
-@app.route('/<path>.dzi')
-def dzi(path):
-    format = app.config['DEEPZOOM_FORMAT']
-    try:
-        resp = make_response(app.slide.get_dzi(format))
-        resp.mimetype = 'application/xml'
-        return resp
-    except KeyError:
-        abort(404)
+@app.route('/front_page')
+def front_page():
+    """render initial page
+
+    Returns:
+        render front_page.html loading page
+    """
+    return render_template('front_page.html')
 
 
-@app.route('/<mask_path>.dzi')
-def mask(mask_path):
-    format = app.config['DEEPZOOM_FORMAT']
-    try:
-        resp = make_response(app.mask.get_dzi(format))
-        resp.mimetype = 'application/xml'
-        return resp
-    except KeyError:
-        abort(404)
+@app.route('/team_member')
+def team_member():
+    """render initial page
 
-
-@app.route('/<path>_files/<int:level>/<int:col>_<int:row>.<format>')
-def tile(path,level, col, row, format):
-    format = format.lower()
-    if format != 'jpeg':
-        # Not supported by Deep Zoom
-        abort(404)
-    try:
-        tile = app.slide.get_tile(level, (col, row))
-    except ValueError:
-        # Invalid level or coordinates
-        abort(404)
-    buf = PILBytesIO()
-    tile.save(buf, format, quality=app.config['DEEPZOOM_TILE_QUALITY'])
-    resp = make_response(buf.getvalue())
-    resp.mimetype = 'image/%s' % format
-    return resp
-
-
-'''
-@app.route('/<mask_path>_files/<int:level>/<int:col>_<int:row>.<format>')
-def mask_tile(mask_path,level, col, row, format):
-    format = format.lower()
-    if format != 'jpeg':
-        # Not supported by Deep Zoom
-        abort(404)
-    try:
-        mask_tile = app.mask.get_tile(level, (col, row))
-    except ValueError:
-        # Invalid level or coordinates
-        abort(404)
-    buf = PILBytesIO()
-    mask_tile.save(buf, format, quality=app.config['DEEPZOOM_TILE_QUALITY'])
-    resp = make_response(buf.getvalue())
-    resp.mimetype = 'image/%s' % format
-    return resp
-
-
-def slugify(text):
-    text = normalize('NFKD', text.lower()).encode('ascii', 'ignore').decode()
-    return re.sub('[^a-z0-9]+', '-', text)
-'''
+    Returns:
+        render team_member.html loading page
+    """
+    return render_template('team_member.html')
 
 
 def shutdown_server():
+    """shutdown the server function function for Apache deployment
+        """
     func = request.environ.get('werkzeug.server.shutdown')
     if func is None:
         raise RuntimeError('Not running with the Werkzeug Server')
@@ -231,70 +133,23 @@ def shutdown_server():
 
 @app.route('/shutdown', methods=['POST'])
 def shutdown():
+    """run shuntdown_server() function
+
+    Returns:
+         'Server shutting down' -- message of server status
+    """
     shutdown_server()
     return 'Server shutting down...'
 
 
-def clean_tempfolder():
-    folder = '/home/temp'
-    for the_file in os.listdir(folder):
-        file_path = os.path.join(folder, the_file)
-        try:
-            if os.path.isfile(file_path):
-                os.unlink(file_path)
-            # elif os.path.isdir(file_path): shutil.rmtree(file_path)
-        except Exception as e:
-            print(e)
-
-
-schedule.every().hour.do(clean_tempfolder)
-
-
 if __name__ == '__main__':
-    parser = OptionParser(usage='Usage: %prog [options] [slide]')
-    parser.add_option('-B', '--ignore-bounds', dest='DEEPZOOM_LIMIT_BOUNDS',
-                default=True, action='store_false',
-                help='display entire scan area')
-    parser.add_option('-c', '--config', metavar='FILE', dest='config',
-                help='config file')
-    parser.add_option('-d', '--debug', dest='DEBUG', action='store_true',
-                help='run in debugging mode (insecure)')
-    parser.add_option('-e', '--overlap', metavar='PIXELS',
-                dest='DEEPZOOM_OVERLAP', type='int',
-                help='overlap of adjacent tiles [1]')
-    parser.add_option('-f', '--format', metavar='{svs}',
-                dest='DEEPZOOM_FORMAT',
-                help='image format for tiles [svs]')
-    parser.add_option('-l', '--listen', metavar='ADDRESS', dest='host',
-                default='10.1.122.61',
-                help='address to listen on [10.1.122.61]')
-    parser.add_option('-p', '--port', metavar='PORT', dest='port',
-                type='int', default=80,
-                help='port to listen on [80]')
-    parser.add_option('-Q', '--quality', metavar='QUALITY',
-                dest='DEEPZOOM_TILE_QUALITY', type='int',
-                help='SVS compression quality [75]')
-    parser.add_option('-s', '--size', metavar='PIXELS',
-                dest='DEEPZOOM_TILE_SIZE', type='int',
-                help='tile size [256]')
+    
+    print("Starting Breast Detection Server, please wait ...")
+    print("Please wait until server has fully started")
+    model_path = './code_zichen/checkpoint/Zichen_model_state_dict.pth'
+    gpu_id = 'gpu0'
+    model = Pytorchmodel(model_path=model_path, img_shape=[
+        224, 224], img_channel=3, gpu_id=gpu_id)
 
-    (opts, args) = parser.parse_args()
-    # Load config file if specified
-    if opts.config is not None:
-        app.config.from_pyfile(opts.config)
-    # Overwrite only those settings specified on the command line
-    for k in dir(opts):
-        if not k.startswith('_') and getattr(opts, k) is None:
-            delattr(opts, k)
-    app.config.from_object(opts)
-    # Set slide file
-
-    try:
-        app.config['DEEPZOOM_SLIDE'] = '/home/harry/1302.svs'
-        # app.config['DEEPZOOM_MASK'] = '1302pred.tif'
-    except IndexError:
-        if app.config['DEEPZOOM_SLIDE'] is None:
-            parser.error('No slide file specified')
-
-    app.run(host=opts.host, port=opts.port)
+    app.run(host='127.0.0.1', port=5000)
 
