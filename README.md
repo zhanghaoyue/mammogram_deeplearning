@@ -48,7 +48,7 @@ Please put your code into the structure
 		- post_processing: to post-process result images
 		- plot_post_process_results: to plot the results after post-processing
 	- Description of the algorithms
-		- This algorithm trains a u-net model to help segment pectoral muscles on digital mammograms.
+		- This approach trains a u-net model to help segment pectoral muscles on digital mammograms.
 		- It has four components: training, testing, evaluation, and post-processing. A classification model is trained and saved to the specified path. Fifty images are used as testing images and the predicted masks are generated for them. Jaccard index is used to evluate the performance of the model by comparing the similarity of the predicted mask and the groud truth (pre-defined). Highly unstatisfactory masks will undergo the post-processing procedure to improve the result. 
 		- All functions have been saved to a library called utils_library. 
 	- Expected output
