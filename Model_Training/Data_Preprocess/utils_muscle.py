@@ -21,6 +21,8 @@ from skimage.filters import threshold_otsu
 from sklearn.metrics import jaccard_similarity_score
 from skimage.morphology import erosion,square
 
+side_length = 256
+
 def create_train_data(image_path, mask_path, side_length): 
     """
     Function to create traning data

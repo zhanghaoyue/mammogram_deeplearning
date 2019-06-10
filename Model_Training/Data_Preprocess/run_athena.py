@@ -9,7 +9,9 @@ import utils_athena
 import glob
 
 
-# set parameters
+################################ set parameters ################################
+
+# set paths
 path = "/data/athena_screen/images/"
 image_path_list = glob.glob("%s/*.png" % path)
 file_path = "/data/athena_screen/be223c_clinical.csv"
@@ -27,13 +29,13 @@ image_name_no_implant_path_final = "/home/yannan_lin/athena_no_implant_name_list
 # save only MLO images
 MLO_path = '/home/yannan_lin/MLO/'
 
-# load data
+############################### load data #####################################
 file_df, new_df, filename,cancer, name_cancer_dic, name_view_dic= load_data(file_path)
 
-# load implant list
+########################### load implant list #################################
 implant_list = load_implant_list(implant_list_path)
 
-# create data 
+######################### create train data ################################### 
 image_list, label_list, name_list, label_list_implant, image_list_implant = create_train_data(
                                             image_path_list, implant_list, filename, name_cancer_dic,
                                             image_implant_raw_path,image_athena_no_implant_path,
