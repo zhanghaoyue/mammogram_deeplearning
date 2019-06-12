@@ -1,6 +1,11 @@
+import sys
+sys.path.insert(0, '../')
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+from graph.metric import *
+from utils.visualization import visualize_generated_img
 
 from base_trainer import BaseTrainer
 
@@ -16,64 +21,80 @@ class Trainer(BaseTrainer):
     def __init__(self, resume, config, train_logger=None):
         super(Trainer, self).__init__(resume, config, train_logger)
 
-    def _one_epoch(self, phase, epoch_data_loader, epoch):
+    def _one_epoch(self, phase, epoch_dataloader, epoch):
         """
         Training logic for an epoch
         """
         if phase == 'train':
             self.model.train()
+            self.scheduler.step()
         else:
             self.model.eval()
 
-        self.model_scheduler.step()
-
         with torch.set_grad_enabled(phase == 'train'):
-            loss_list = []
-            score_list = []
-            for i_batch, data in enumerate(epoch_data_loader):
+            loss_overall_list = []
+            loss_list_dict = {'0': [], '1': []}
+            dice_list_dict = {'0': [], '1': []}
+            for batch_idx, data in enumerate(epoch_dataloader):
+                images, GT = data
+                images = images.to(self.device)
+                GT = GT.to(self.device)
 
-                # train Dis
-                images, labels = data['image'], data['label']
-                images, labels = images.to(self.device), labels.to(self.device)
+                # SR : Segmentation Result
+                SR = self.model(images)
+                SR_probs = F.sigmoid(SR)
 
-                probs = self.model(images).flatten()
+                loss_overall = torch.FloatTensor([0]).to(self.device)
+                for i in range(self.output_ch):
+                    GT_sub = GT[:, i, :, :]
 
-                weight = self.class_weight[labels.long()].to(self.device).flatten()
+                    SR_probs_sub = SR_probs[:, i, :, :]
 
-                criterion = torch.nn.BCELoss(weight=weight).to(self.device)
+                    SR_flat = SR_probs_sub.view(SR_probs_sub.size(0), -1)
 
-                loss = criterion(probs, labels.float())
-                loss_list.append(loss.item())
+                    GT_flat = GT_sub.view(GT_sub.size(0), -1)
 
-                prediction = (probs > 0.5)
-                prediction = prediction.to(self.device)
+                    weight = self.class_weight[i][GT_flat.long()].to(self.device)
+                    loss_fn = nn.BCELoss(weight=weight)
+                    loss = loss_fn(SR_flat, GT_flat)
 
-                # accuracy
-                score = (prediction.long() == labels.long()).float().mean()
-                score_list.append(score.item())
+                    loss_overall += loss * self.label_weight[i]
+
+                    dice = get_DC(SR_probs_sub, GT_sub)
+
+                    loss_list_dict['%d' % i].append(loss.data.cpu().item())
+                    dice_list_dict['%d' % i].append(dice)
+
+                loss_overall_list.append(loss_overall.data.cpu().item())
 
                 if phase == 'train':
-                    # update dis scheduler and optimizer
-                    self.model_optimizer.zero_grad()
-                    loss.backward()
-                    self.model_optimizer.step()
+                    self.optimizer.zero_grad()
+                    loss_overall.backward()
+                    self.optimizer.step()
 
                 # log iter loss and score
-                if i_batch % self.config['trainer']['log_write_iteration'] == 0:
-                    self.writer.set_step((epoch - 1) * len(epoch_data_loader) + i_batch, mode=phase)
-                    self.writer.add_scalars('iter_loss', loss.item())
-                    self.writer.add_scalars('iter_score', score)
-
-            epoch_loss = np.array(loss_list).mean()
-            epoch_score = np.array(score_list).mean()
+                if batch_idx % self.config['trainer']['log_write_iteration'] == 0:
+                    self.writer.set_step((epoch - 1) * len(epoch_dataloader) + batch_idx, mode=phase)
+                    self.writer.add_scalars('iter_loss_overall', loss_overall.item())
+                    for i in range(self.output_ch):
+                        self.writer.add_scalars('iter_loss_%d' % i, loss_list_dict['%d' % i][-1])
+                        self.writer.add_scalars('iter_dice_%d' % i, dice_list_dict['%d' % i][-1])
 
             # write epoch metric to logger and tensorboard
             log = {}
             self.writer.set_step(epoch, mode=phase)
-            log.update({'%s_loss' % phase: epoch_loss})
-            log.update({'%s_score' % phase: epoch_score})
-            self.writer.add_scalars('epoch_loss', epoch_loss)
-            self.writer.add_scalars('epoch_score', epoch_score)
+            log.update({'%s_loss_overall' % phase: np.array(loss_overall_list).mean()})
+            self.writer.add_scalars('epoch_loss_overall', np.array(loss_overall_list).mean())
+
+            for i in range(self.output_ch):
+                log.update({'%s_loss_%d' % (phase, i): np.array(loss_list_dict['%d' % i]).mean()})
+                self.writer.add_scalars('epoch_loss_%d' % i, np.array(loss_list_dict['%d' % i]).mean())
+                log.update({'%s_dice_%d' % (phase, i): np.array(dice_list_dict['%d' % i]).mean()})
+                self.writer.add_scalars('epoch_dice_%d' % i, np.array(dice_list_dict['%d' % i]).mean())
+
+            # visualize generated images
+            if epoch % self.config['trainer']['vis_period'] == 0 and phase == 'val':
+                visualize_generated_img(self.writer, epoch, images, GT, SR_probs)
 
             # display epoch logging on the screen
             if self.verbosity >= 2 and epoch % self.config['trainer']['log_display_period'] == 0:

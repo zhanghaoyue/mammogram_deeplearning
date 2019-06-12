@@ -1,98 +1,138 @@
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
+from torch.nn import init
 
 
-class BasicConv(nn.Module):
-    def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, dilation=1, groups=1, relu=True,
-                 bn=True, bias=False):
-        super(BasicConv, self).__init__()
-        self.out_channels = out_planes
-        self.conv = nn.Conv2d(in_planes, out_planes, kernel_size=kernel_size, stride=stride, padding=padding,
-                              dilation=dilation, groups=groups, bias=bias)
-        self.bn = nn.BatchNorm2d(out_planes, eps=1e-5, momentum=0.01, affine=True) if bn else None
-        self.relu = nn.ReLU() if relu else None
+def init_weights(net, init_type='normal', gain=0.02):
+    def init_func(m):
+        classname = m.__class__.__name__
+        if hasattr(m, 'weight') and (classname.find('Conv') != -1 or classname.find('Linear') != -1):
+            if init_type == 'normal':
+                init.normal_(m.weight.data, 0.0, gain)
+            elif init_type == 'xavier':
+                init.xavier_normal_(m.weight.data, gain=gain)
+            elif init_type == 'kaiming':
+                init.kaiming_normal_(m.weight.data, a=0, mode='fan_in')
+            elif init_type == 'orthogonal':
+                init.orthogonal_(m.weight.data, gain=gain)
+            else:
+                raise NotImplementedError('initialization method [%s] is not implemented' % init_type)
+            if hasattr(m, 'bias') and m.bias is not None:
+                init.constant_(m.bias.data, 0.0)
+        elif classname.find('BatchNorm2d') != -1:
+            init.normal_(m.weight.data, 1.0, gain)
+            init.constant_(m.bias.data, 0.0)
+
+    print('initialize network with %s' % init_type)
+    net.apply(init_func)
+
+
+class conv_block(nn.Module):
+    def __init__(self, ch_in, ch_out):
+        super(conv_block, self).__init__()
+        self.conv = nn.Sequential(
+            nn.Conv2d(ch_in, ch_out, kernel_size=3, stride=1, padding=1, bias=True),
+            nn.BatchNorm2d(ch_out),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(ch_out, ch_out, kernel_size=3, stride=1, padding=1, bias=True),
+            nn.BatchNorm2d(ch_out),
+            nn.ReLU(inplace=True)
+        )
 
     def forward(self, x):
         x = self.conv(x)
-        if self.bn is not None:
-            x = self.bn(x)
-        if self.relu is not None:
-            x = self.relu(x)
         return x
 
 
-class Flatten(nn.Module):
-    def forward(self, x):
-        return x.view(x.size(0), -1)
-
-
-class ChannelGate(nn.Module):
-    def __init__(self, gate_channels, reduction_ratio=16, pool_types=['max']):
-        super(ChannelGate, self).__init__()
-        self.gate_channels = gate_channels
-        self.mlp = nn.Sequential(
-            Flatten(),
-            nn.Linear(gate_channels, gate_channels // reduction_ratio),
-            nn.ReLU(),
-            nn.Linear(gate_channels // reduction_ratio, gate_channels)
+class up_conv(nn.Module):
+    def __init__(self, ch_in, ch_out):
+        super(up_conv, self).__init__()
+        self.up = nn.Sequential(
+            nn.Upsample(scale_factor=2),
+            nn.Conv2d(ch_in, ch_out, kernel_size=3, stride=1, padding=1, bias=True),
+            nn.BatchNorm2d(ch_out),
+            nn.ReLU(inplace=True)
         )
-        self.pool_types = pool_types
 
     def forward(self, x):
-        channel_att_sum = None
-        for pool_type in self.pool_types:
-            if pool_type == 'avg':
-                channel_att_raw = F.avg_pool2d(x, (x.size(2), x.size(3)), stride=(x.size(2), x.size(3)))
-                channel_att_raw = self.mlp(channel_att_raw)
-            elif pool_type == 'max':
-                channel_att_raw = F.max_pool2d(x, (x.size(2), x.size(3)), stride=(x.size(2), x.size(3)))
-                channel_att_raw = self.mlp(channel_att_raw)
-
-            if channel_att_sum is None:
-                channel_att_sum = channel_att_raw
-            else:
-                channel_att_sum = channel_att_sum + channel_att_raw
-
-        scale = torch.sigmoid(channel_att_sum).unsqueeze(2).unsqueeze(3).expand_as(x)
-        # scale = torch.sigmoid(channel_att_sum).expand_as(x)
-        return x * scale
+        x = self.up(x)
+        return x
 
 
-# class ChannelPool(nn.Module):
-#     def forward(self, x):
-#         # return torch.cat((torch.max(x, 1)[0].unsqueeze(1), torch.mean(x, 1).unsqueeze(1)), dim=1)
-#         return torch.max(x, 1)[0].unsqueeze(1)
-
-
-class SpatialGate(nn.Module):
-    def __init__(self, gate_channels):
-        super(SpatialGate, self).__init__()
-        kernel_size = 3
-        # self.compress = ChannelPool()
-        self.spatial = BasicConv(gate_channels, 1, kernel_size, stride=1, padding=(kernel_size - 1) // 2, relu=False)
-        self.softmax = nn.Softmax(dim=2)
+class Recurrent_block(nn.Module):
+    def __init__(self, ch_out, t=2):
+        super(Recurrent_block, self).__init__()
+        self.t = t
+        self.ch_out = ch_out
+        self.conv = nn.Sequential(
+            nn.Conv2d(ch_out, ch_out, kernel_size=3, stride=1, padding=1, bias=True),
+            nn.BatchNorm2d(ch_out),
+            nn.ReLU(inplace=True)
+        )
 
     def forward(self, x):
-        # x_compress = self.compress(x)
-        x_out = self.spatial(x)
-        # print(x_out.shape)
-        # scale = torch.sigmoid(x_out)  # broadcasting
-        C, N, H, W = x_out.shape
-        x_out_flatten = x_out.view(C, N, -1)
-        # todo: add histogram of attention value to tensorboard
-        scale = self.softmax(x_out_flatten).view(C, N, H, W)  # broadcasting
-        # print(scale)
-        return x * scale
+        for i in range(self.t):
+
+            if i == 0:
+                x1 = self.conv(x)
+
+            x1 = self.conv(x + x1)
+        return x1
 
 
-class CBAM(nn.Module):
-    def __init__(self, gate_channels, reduction_ratio=16, pool_types=['max']):
-        super(CBAM, self).__init__()
-        # self.ChannelGate = ChannelGate(gate_channels, reduction_ratio=reduction_ratio, pool_types=pool_types)
-        self.SpatialGate = SpatialGate(gate_channels)
+class RRCNN_block(nn.Module):
+    def __init__(self, ch_in, ch_out, t=2):
+        super(RRCNN_block, self).__init__()
+        self.RCNN = nn.Sequential(
+            Recurrent_block(ch_out, t=t),
+            Recurrent_block(ch_out, t=t)
+        )
+        self.Conv_1x1 = nn.Conv2d(ch_in, ch_out, kernel_size=1, stride=1, padding=0)
 
     def forward(self, x):
-        # x_out = self.ChannelGate(x)
-        x_out = self.SpatialGate(x)
-        return x_out
+        x = self.Conv_1x1(x)
+        x1 = self.RCNN(x)
+        return x + x1
+
+
+class single_conv(nn.Module):
+    def __init__(self, ch_in, ch_out):
+        super(single_conv, self).__init__()
+        self.conv = nn.Sequential(
+            nn.Conv2d(ch_in, ch_out, kernel_size=3, stride=1, padding=1, bias=True),
+            nn.BatchNorm2d(ch_out),
+            nn.ReLU(inplace=True)
+        )
+
+    def forward(self, x):
+        x = self.conv(x)
+        return x
+
+
+class Attention_block(nn.Module):
+    def __init__(self, F_g, F_l, F_int):
+        super(Attention_block, self).__init__()
+        self.W_g = nn.Sequential(
+            nn.Conv2d(F_g, F_int, kernel_size=1, stride=1, padding=0, bias=True),
+            nn.BatchNorm2d(F_int)
+        )
+
+        self.W_x = nn.Sequential(
+            nn.Conv2d(F_l, F_int, kernel_size=1, stride=1, padding=0, bias=True),
+            nn.BatchNorm2d(F_int)
+        )
+
+        self.psi = nn.Sequential(
+            nn.Conv2d(F_int, 1, kernel_size=1, stride=1, padding=0, bias=True),
+            nn.BatchNorm2d(1),
+            nn.Sigmoid()
+        )
+
+        self.relu = nn.ReLU(inplace=True)
+
+    def forward(self, g, x):
+        g1 = self.W_g(g)
+        x1 = self.W_x(x)
+        psi = self.relu(g1 + x1)
+        psi = self.psi(psi)
+
+        return x * psi

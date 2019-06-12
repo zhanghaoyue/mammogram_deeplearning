@@ -4,19 +4,17 @@ import torch
 import torchvision.utils as vutils
 
 
-def visualize_generated_img(gen, epoch, writer, device, config):
-    gen.eval()
-
-    vis_size = 64
-    noise_size = config['model']['noise_size']
-    image_size = config['model']['image_size']
-    channel = config['model']['channel']
-    noise = torch.Tensor(vis_size, noise_size).uniform_().to(device)
-    gen_images = gen(noise)
-    gen_images = gen_images.reshape([vis_size, channel, int(np.sqrt(image_size/channel)), int(np.sqrt(image_size/channel))])
-    img = vutils.make_grid(gen_images, normalize=True, scale_each=True)
+def visualize_generated_img(writer, epoch, images, GT, SR_prob):
+    images = vutils.make_grid(images, normalize=True, scale_each=True)
     writer.set_step(epoch, mode='train')
-    writer.add_image('%s' % 'generated_image', img)
+    writer.add_image('%s' % 'image', images)
+
+    SR = (SR_prob > 0.5).float()
+    for i in range(SR.shape[1]):
+        SR_sub = vutils.make_grid(SR[:, i, :, :].unsqueeze(1), normalize=True, scale_each=True)
+        GT_sub = vutils.make_grid(GT[:, i, :, :].unsqueeze(1), normalize=True, scale_each=True)
+        writer.add_image('%s_%d' % ('ground_truth', i), GT_sub)
+        writer.add_image('%s_%d' % ('segmentation_result', i), SR_sub)
 
 
 class WriterTensorboardX():

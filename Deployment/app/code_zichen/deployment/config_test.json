@@ -1,0 +1,13 @@
+{
+    "name": "BE223C-attention-Unet",
+    "n_gpu": 1,
+
+    "model": {
+    },
+    "data_loader": {
+        "type": "Mammography",
+        "args":{
+            "test_batch_size": 1
+        }
+    }
+}

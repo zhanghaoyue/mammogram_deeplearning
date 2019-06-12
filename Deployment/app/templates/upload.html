@@ -26,16 +26,21 @@
                     dataType: 'json',
                     success: function (data) {
                         if (data.result!=null) {
-                            result_1.predictions = data.result.predictions;
-                            result_1.img_path = data.img_path;
+                            result_1.predictions = data.result;
+                            result_1.img_path_1 = data.img_path_1;
+                            result_1.img_path_2 = data.img_path_2;
+                            result_1.img_path_3 = data.img_path_3;
                         }
-                        <!--$("send_img_1").src=data.img_path-->
+                        $("send_img_1").src=data.img_path_1
+                        $("send_img_2").src=data.img_path_2
+                        $("send_img_3").src=data.img_path_3
                     },
                     error: function () {
                         alert("Error: upload image");
                     }
                 });
             }
+            /*
             function ajaxForm_2(){
                 var formData = new FormData(document.getElementById("form2"));
                 $.ajax({
@@ -48,15 +53,16 @@
                     success: function (data) {
                         if (data.result!=null) {
                             result_2.predictions = data.result.predictions;
-                            result_2.img_path = data.img_path;
+                            result_2.img_path = data.result.img_path;
                         }
-                        <!--$("send_img_2").src=data.img_path-->
+                        $("send_img_2").src=data.img_path
                     },
                     error: function () {
                         alert("Error: upload image");
                     }
                 });
             }
+            */
     </script>
 </head>
 <body>
@@ -101,6 +107,7 @@
                     <button class="uk-button uk-button-danger" type="button" onclick="ajaxForm_1()">Predict</button>
                 </form> 
             </div>
+            <!--
             <div class="uk-card uk-card-default uk-card-body">
                 <h4>Multi-Instance Model</h4>
                 <form id="form2" onsubmit="return false" enctype="multipart/form-data">
@@ -111,70 +118,87 @@
                     <button class="uk-button uk-button-danger" type="button" onclick="ajaxForm_2()">Predict</button>
                 </form>  
             </div>
+            -->
         </div>
         <h4>Image Display and Prediction Mask</h4>
         <hr class="uk-margin-small">
         <div class="uk-grid-small uk-child-width-expand@m uk-text-center uk-grid-match" uk-grid>
             <div class="uk-card uk-card-default uk-card-body">
-                <div class="uk-inline">
-                   <img id="send_img_1" :src="img_path"/> 
-                   <div class="uk-overlay uk-position-top"></div>
+                <div id="app_1" class="uk-inline" v-show="change_status">
+                    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                                <h3 class="uk-card-title">Original Image</h3>
+                                <img id="send_img_1" :src="img_path_1" height="200" width="150">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                                <h3 class="uk-card-title">Heatmap</h3>
+                                <img id="send_img_2" :src="img_path_2" height="200" width="150">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                                <h3 class="uk-card-title">Overlay</h3>
+                                <img id="send_img_3" :src="img_path_3" height="200" width="150">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-overlay uk-position-top"></div>
+                    <div id="app_1" v-show="change_status">
+                        <table id="generatedTable">
+                            <thead>
+                                <tr>
+                                    <th>Cancer</th>
+                                    <th>Probability</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr v-for="(item,index) in predictions">
+                                    <td >[[ item.label ]]</td>
+                                    <td>[[ item.probability ]]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <!--
             <div class="uk-card uk-card-default uk-card-body">
-                <div class="uk-inline">
-                   <img id="send_img_2" :src="img_path"/> 
-                   <div class="uk-overlay uk-position-top"></div>
+                <div id="app_2" class="uk-inline">
+                    <img id="send_img_2" :src="img_path"/>
+                    <div class="uk-overlay uk-position-top"></div>
+                    <div id="app_2" v-show="change_status">
+                        <table id="generatedTable">
+                            <thead>
+                                <tr>
+                                    <th>Cancer</th>
+                                    <th>Probability</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr v-for="(item,index) in predictions">
+                                    <td >[[ item.label ]]</td>
+                                    <td>[[ item.probability ]]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            -->
         </div>
-        <h4>Prediction Result</h4>
-        <hr class="uk-margin-small">
-        <div class="uk-grid-small uk-child-width-expand@m uk-text-center uk-grid-match" uk-grid>
-            <div class="uk-card uk-card-default uk-card-body">
-                <div id="app_1" v-show="change_status">
-                    <table id="generatedTable">
-                        <thead>
-                            <tr>
-                                <th>Cancer</th>
-                                <th>Probability</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            <tr v-for="(item,index) in predictions">
-                                <td >[[ item.label ]]</td>
-                                <td>[[ item.probability ]]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="uk-card uk-card-default uk-card-body">
-                <div id="app_2" v-show="change_status">
-                    <table id="generatedTable">
-                        <thead>
-                            <tr>
-                                <th>Cancer</th>
-                                <th>Probability</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            <tr v-for="(item,index) in predictions">
-                                <td >[[ item.label ]]</td>
-                                <td>[[ item.probability ]]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+
     </div>
     <script>
         var result_1 = new Vue({
             el:"#app_1",
             data:{
                 predictions:null,
-                img_path:null,
+                img_path_1:null,
+                img_path_2:null,
+                img_path_3:null,
             },
             delimiters: ['[[',']]'],
             computed:{
@@ -185,12 +209,11 @@
                 }
             }
         })
-
+        /*
         var result_2 = new Vue({
             el:"#app_2",
             data:{
                 predictions:null,
-                img_path:null,
             },
             delimiters: ['[[',']]'],
             computed:{
@@ -201,6 +224,7 @@
                 }
             }
         })
+        */
     </script>
 </body>
 </html>

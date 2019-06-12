@@ -10,24 +10,16 @@ import torch.optim as optim
 sys.path.append('../')
 
 import graph.model.model as module_arch
-from dataloader.data_loader import get_mammography_dataset
+from dataloader.data_loader import get_INBreast_dataloader
 from utils.util import ensure_dir, get_instance
 from utils.visualization import WriterTensorboardX
 
 
-def build_optimizer(model, optim_name, config):
+def build_optimizer(model, config):
     optim_config = config['optimizer']
-    min_lr = optim_config['args']['min_lr']
     trainable_params = filter(lambda p: p.requires_grad, model.parameters())
-    optimizer = getattr(optim, optim_config['type'][optim_name])(trainable_params, **optim_config['args'][optim_name])
-
-    scheduler_config = config['scheduler']
-    if scheduler_config['type'] == 'LambdaLR':
-        lr_lambda = lambda epoch: max(min_lr,
-                                      min(3. * (1. - float(epoch) / float(config['trainer']['max_epochs'])), 1.))
-        scheduler = get_instance(optim.lr_scheduler, 'scheduler', config, optimizer, lr_lambda)
-    else:
-        scheduler = get_instance(optim.lr_scheduler, 'scheduler', config, optimizer)
+    optimizer = getattr(optim, optim_config['type'])(trainable_params, **optim_config['args'])
+    scheduler = get_instance(optim.lr_scheduler, 'scheduler', config, optimizer)
 
     return optimizer, scheduler
 
@@ -53,20 +45,22 @@ class BaseTrainer:
         self.device, self.device_ids = self._prepare_device(self.config['n_gpu'])
 
         # dataloader
-        self.train_set, self.val_set = get_mammography_dataset(self.config)
+        self.train_set, self.val_set = get_INBreast_dataloader(self.config)
+
+        # class weight for balanced dataset
+        self.class_weight = [torch.FloatTensor([1, 20]), torch.FloatTensor([1, 4])]
+        self.label_weight = [2, 1]
+        self.output_ch = len(self.class_weight)
 
         # build model architecture
-        self.model = module_arch.CbamResNet()
+        self.model = module_arch.AttU_Net(img_ch=1, output_ch=self.output_ch)
         # print(self.model)
 
         # model parallel using muti-gpu
         self.model = model_parallel(self.model, self.device, self.device_ids)
 
         # build optimizer, learning rate scheduler.
-        self.model_optimizer, self.model_scheduler = build_optimizer(self.model, 'model', self.config)
-
-        # class weight for balanced dataset
-        self.class_weight = torch.FloatTensor([1, 1])
+        self.optimizer, self.scheduler = build_optimizer(self.model, self.config)
 
         self.train_logger = train_logger  # used for saving logging info
 
@@ -207,8 +201,8 @@ class BaseTrainer:
             'epoch': epoch,
             'logger': self.train_logger,
             'model_state_dict': self.model.state_dict(),
-            'model_optimizer': self.model_optimizer.state_dict(),
-            'model_scheduler': self.model_scheduler.state_dict(),
+            'model_optimizer': self.optimizer.state_dict(),
+            'model_scheduler': self.scheduler.state_dict(),
             'monitor_best': self.mnt_best,
             'config': self.config
         }
@@ -242,13 +236,13 @@ class BaseTrainer:
         if checkpoint['config']['optimizer']['type'] != self.config['optimizer']['type']:
             self.logger.warning('Warning: Optimizer type given in config file is different from that of checkpoint. ' + \
                                 'Optimizer parameters not being resumed.')
-        self.model_optimizer.load_state_dict(checkpoint['model_optimizer'])
+        self.optimizer.load_state_dict(checkpoint['model_optimizer'])
 
         # load scheduler state from checkpoint only when scheduler type is not changed
         if checkpoint['config']['scheduler']['type'] != self.config['scheduler']['type']:
             self.logger.warning('Warning: Scheduler type given in config file is different from that of checkpoint. ' + \
                                 'Scheduler parameters not being resumed.')
-        self.model_scheduler.load_state_dict(checkpoint['model_scheduler'])
+        self.scheduler.load_state_dict(checkpoint['model_scheduler'])
 
         self.train_logger = checkpoint['logger']
         self.logger.info("Checkpoint '{}' (epoch {}) loaded".format(resume_path, self.start_epoch))

@@ -1,44 +1,58 @@
-import glob
-import json
-import numpy as np
-import pandas as pd
 from sklearn.model_selection import train_test_split
+from torch.utils.data import DataLoader
+from .base_data_loaders import *
+import glob
 
-from .base_data_loaders import base_data_loader
+def get_INBreast_dataloader(config):
+    config_dataloader = config['data_loader']['args']
 
+    image_list = sorted(glob.glob('/home/zcwang/Desktop/local-projects/BE223c/data/INBreast/preprocess/image/*.png'))
+    mass_list = [path.replace('image', 'mass') for path in image_list]
+    muscle_list = [path.replace('image', 'muscle') for path in image_list]
 
-def get_mammography_dataset(config):
-    config_data_loader = config['data_loader']['args']
-    image_root = config_data_loader['image_root']
-    label_path = config_data_loader['label_path']
+    mask_list = np.stack([mass_list, muscle_list], 1)
 
-    image_list = np.array(glob.glob(image_root + '*.png'))
-    label_table = pd.read_csv(label_path).values[:, -3:]
+    x_train, x_test, y_train, y_test = train_test_split(image_list, mask_list, test_size=0.2, random_state=0)
 
-    name_list = [path.split('/')[-1].split('.')[0] for path in image_list]
-    index_list = np.array([np.where(label_table[:, 0] == name)[0][0] for name in name_list])
-    label_list = np.array([np.sum(label_table[index][1:]) for index in index_list])
+    train_set = INBreastDataset(x_train, y_train, 'train')
+    test_set = INBreastDataset(x_test, y_test, 'test')
 
-    pos_index = np.where(label_list == 1)[0].tolist()
-    neg_index = np.where(label_list == 0)[0]
-    neg_index_balanced = neg_index[:len(pos_index)].tolist()
+    train_dataloader = DataLoader(train_set, config_dataloader['train_batch_size'], shuffle=True,
+                                  num_workers=config_dataloader['num_workers'],
+                                  drop_last=config_dataloader['drop_last'])
+    test_dataloader = DataLoader(test_set, config_dataloader['test_batch_size'], shuffle=False,
+                                 num_workers=config_dataloader['num_workers'],
+                                 drop_last=config_dataloader['drop_last'])
 
-    x = image_list[pos_index + neg_index_balanced]
-    y = label_list[pos_index + neg_index_balanced]
-
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1, stratify=y)
-
-    print('train set :%d, val set:%d' % (len(x_train), len(x_test)))
-    train_set = base_data_loader(config, x_train, y_train, 'train')
-    val_set = base_data_loader(config, x_test, y_test, 'val')
-
-    return train_set, val_set
+    return train_dataloader, test_dataloader
 
 
 if __name__ == '__main__':
-    config = json.load(open('../config/config.json'))
-    train_set, val_set = get_mammography_dataset(config)
-    a = iter(train_set)
-    data = next(a)
-    inputs, labels = data['image'], data['label']
-    print(len(val_set))
+    import torchvision.transforms as transforms
+    import numpy as np
+    import json
+    import glob
+    import matplotlib.pyplot as plt
+
+    config_path = '/home/zcwang/Desktop/local-projects/BE223c/code/config/config.json'
+    config = json.load(open(config_path))
+
+    train_dataloader, test_dataloader = get_INBreast_dataloader(config)
+    for data in iter(train_dataloader):
+        image, mask = data
+        break
+
+    print(np.unique(mask))
+    print(mask.shape, image.shape)
+
+    plt.figure()
+    plt.imshow(mask[0][0])
+    plt.show()
+
+    plt.figure()
+    plt.imshow(mask[0][1])
+    plt.show()
+
+    plt.figure()
+    plt.imshow(image[0][0])
+    plt.show()

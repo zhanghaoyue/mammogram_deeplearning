@@ -2,7 +2,8 @@ import os.path
 import sys
 import flask
 from flask_uploads import UploadSet, IMAGES, configure_uploads, ALL
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
+from PIL import Image
 import time
 import cv2
 import numpy as np
@@ -17,7 +18,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 print(sys.path)
 
 app = Flask(__name__)
-app.config.from_object(config)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config.from_object(config)
 photos = UploadSet('PHOTO')
 configure_uploads(app, photos)
@@ -41,13 +42,23 @@ def upload():
         img = secure_filename(img)
         new_name = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime()) + '_' + img
         filename = photos.save(request.files['img'], name=new_name)
-        data = predict_img(photos.path(filename), is_numpy=False)
-        img_path = photos.url(filename)
-        return flask.jsonify({"result": data, "img_path": img_path})
+        data = predict_img(photos.path(filename))
+
+        data['img_png'].save('static/'+filename[:-4]+'img_png.png')
+        data['attention_map_png'].save('static/'+filename[:-4]+'attention_map_png.png')
+        data['overlay_png'].save('static/'+filename[:-4]+'overlay_png.png')
+        img_path_1 = url_for('static', filename=filename[:-4]+'img_png.png')
+        img_path_2 = url_for('static', filename=filename[:-4]+'attention_map_png.png')
+        img_path_3 = url_for('static', filename=filename[:-4]+'overlay_png.png')
+        return flask.jsonify({"result": data['predictions'], "img_path_1": img_path_1,
+                              "img_path_2": img_path_2, "img_path_3": img_path_3})
     else:
-        img_path = None
+        img_path_1 = None
+        img_path_2 = None
+        img_path_3 = None
         result = []
-    return render_template('upload.html', img_path=img_path, result=result)
+    return render_template('upload.html', img_path_1=img_path_1,
+                           img_path_2=img_path_2, img_path_3=img_path_3, result=result)
 
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -65,7 +76,7 @@ def predict():
         img = request.files['image'].read()
         img = np.fromstring(img, np.uint8)
         img = cv2.imdecode(img, flags=1)
-        data = predict_img(img, is_numpy=False)
+        data = predict_img(img)
     return flask.jsonify(data)
 
 
@@ -81,12 +92,15 @@ def predict_img(img, is_numpy=False):
     """
     data = dict()
     start = time.time()
-    result = model.predict(img, is_numpy=is_numpy)
+    result = model.predict(img)
     cost_time = time.time() - start
     data['predictions'] = list()
-    for label, prob in result:
-        m_predict = {'label': label, 'probability': ("%.4f" % prob)}
-        data['predictions'].append(m_predict)
+
+    m_predict = {'label': result[0], 'probability': ("%.2f" % result[1])}
+    data['predictions'].append(m_predict)
+    data['img_png'] = result[2]
+    data['attention_map_png'] = result[3]
+    data['overlay_png'] = result[4]
     data['state'] = True
     data['time'] = cost_time
     return data
@@ -146,10 +160,9 @@ if __name__ == '__main__':
     
     print("Starting Breast Detection Server, please wait ...")
     print("Please wait until server has fully started")
-    model_path = './code_zichen/checkpoint/Zichen_model_state_dict.pth'
-    gpu_id = 'gpu0'
+    model_path = './code_zichen/checkpoint/Zichen_model.pth'
     model = Pytorchmodel(model_path=model_path, img_shape=[
-        224, 224], img_channel=3, gpu_id=gpu_id)
+        512, 512], img_channel=1)
 
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=5000, debug=True)
 

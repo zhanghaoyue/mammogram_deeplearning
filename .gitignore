@@ -1,2 +1,6 @@
 # ignore folder named 'venv'
 venv/
+*.jpg
+*.jpeg
+*.png
+*.gif

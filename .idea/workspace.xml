@@ -2,476 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94809da3-41b0-4d0a-ba3c-c4a7063fd535" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/base_trainer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/one_epoch_trainer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/config/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/data_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/loss/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/loss/loss.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/metric.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/prepare_device.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/visualization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/static/js/uikit-icons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/static/js/uikit-icons.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/static/js/uikit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/static/js/uikit.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/static/js/vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/templates/front_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/templates/team_member.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/templates/upload.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_34_30_fff4ca0678f3974a97449b7cb64b4def.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_34_45_fff4ca0678f3974a97449b7cb64b4def.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_42_15_fff4ca0678f3974a97449b7cb64b4def.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_48_43_ffdd088e3aeda80e45276f8807c710ba.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_50_13_fff4ca0678f3974a97449b7cb64b4def.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/be223c.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/be223c.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Deployment/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/FileSaver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/.Rhistory" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/static/.Rhistory" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/flat-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/flat-ui.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/flat-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/flat-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/flat-ui.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/flat-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/glyphicons/flat-ui-icons-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/glyphicons/flat-ui-icons-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/glyphicons/flat-ui-icons-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/glyphicons/flat-ui-icons-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/glyphicons/selection.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-black.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-black.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-black.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bolditalic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bolditalic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bolditalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-bolditalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-italic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-light.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-light.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-light.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/fonts/lato/lato-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Book.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Calendar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Chat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Clipboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Compas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Gift-Box.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Infinity-Loop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Mail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Pensils.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Pocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Retina-Ready.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Toilet-Paper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/png/Watches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/book.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/calendar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/chat.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/clipboard.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/clocks.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/compas.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/gift-box.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/loop.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/mail.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/map.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/paper-bag.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/pencils.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/retina.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/ribbon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/icons/svg/toilet-paper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/login/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/login/imac-2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/login/imac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/tile/ribbon-2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/img/tile/ribbon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/flat-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/flat-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/vendor/html5shiv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/vendor/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/vendor/jquery.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/vendor/respond.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/vendor/video-js.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/dist/js/vendor/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/demo.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/docs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/docs.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/src/demo.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/src/docs.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/css/src/prettyprint.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-author.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-pic-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-pic-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-pic-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-pic-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-pic-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser-pic-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/browser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/html-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/logo-mask-2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/logo-mask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/demo/video.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/example-image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/footer/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/getting-started/icomoon_import.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/img/video/poster.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/js/application.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/assets/js/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/components.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/dropdowns.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/forms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/navbar-fixed-top.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/navbar-static-top.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/navbars-with-elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/navbars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/radiocheck.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/switches.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/tagsinput.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/tiles.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/todo-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/tooltips.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/typography.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/examples/vertical-slider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/getting-started.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/docs/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/glyphicons/flat-ui-icons-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/glyphicons/flat-ui-icons-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/glyphicons/flat-ui-icons-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/glyphicons/flat-ui-icons-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/glyphicons/selection.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-black.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-black.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-black.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bold.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bolditalic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bolditalic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bolditalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-bolditalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-italic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-light.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-light.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-light.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/fonts/lato/lato-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Book.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Calendar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Chat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Clipboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Compas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Gift-Box.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Infinity-Loop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Mail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Pensils.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Pocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Retina-Ready.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Toilet-Paper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/png/Watches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/book.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/calendar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/chat.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/clipboard.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/clocks.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/compas.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/gift-box.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/loop.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/mail.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/map.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/paper-bag.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/pencils.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/retina.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/ribbon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/icons/svg/toilet-paper.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/login/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/login/imac-2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/login/imac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/tile/ribbon-2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/img/tile/ribbon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/.jscs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/flat-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/flat-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/radiocheck.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/vendor/html5shiv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/vendor/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/vendor/jquery.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/vendor/respond.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/vendor/video-js.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/js/vendor/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/.csscomb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/.csslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/flat-ui.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/background-clip.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/background-variant.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/border-radius.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/buttons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/center-block.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/clearfix.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/forms.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/gradients.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/grid.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/hide-text.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/image.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/nav-divider.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/navbar-vertical-align.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/opacity.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/pagination.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/pallets.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/reset-filter.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/resize.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/responsive-visibility.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/select.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/size.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/switches.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/tab-focus.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/text-emphasis.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/text-overflow.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/mixins/vendor-prefixes.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/button-groups.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/buttons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/code.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/dropdowns.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/footer.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/forms.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/glyphicons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/input-groups.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/local-fonts.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/login.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/navbar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/pager.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/pagination.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/palette.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/print.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/progress-bars.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/radiocheck.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/scaffolding.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/select.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/share.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/slider.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/switch.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/tagsinput.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/thumbnails.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/tiles.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/todo-list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/tooltip.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/type.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/typeahead.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/modules/video.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/spaces.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/Flat-UI-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit.css" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/static/css/uikit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/static/css/uikit.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/dist/openseadragon-annotations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/fabric.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/button_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/button_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/button_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/button_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/draw_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/draw_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/draw_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/draw_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/fullpage_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/fullpage_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/fullpage_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/fullpage_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/home_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/home_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/home_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/home_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/move_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/move_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/move_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/move_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/next_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/next_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/next_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/next_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/preview.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/previous_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/previous_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/previous_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/previous_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateleft_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateleft_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateleft_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateleft_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateright_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateright_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateright_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/rotateright_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_cancel_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_cancel_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_cancel_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_cancel_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_confirm_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_confirm_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_confirm_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_confirm_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_grouphover (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/selection_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomin_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomin_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomin_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomin_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomout_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomout_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomout_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/zoomout_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/jquery-3.2.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/static/js/jquery-3.2.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/button_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/button_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/button_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/button_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/fullpage_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/fullpage_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/fullpage_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/fullpage_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/home_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/home_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/home_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/home_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/next_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/next_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/next_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/next_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/previous_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/previous_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/previous_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/previous_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateleft_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateleft_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateleft_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateleft_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateright_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateright_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateright_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/rotateright_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomin_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomin_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomin_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomin_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomout_grouphover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomout_hover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomout_pressed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/images/zoomout_rest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/openseadragon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/openseadragon.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/openseadragon.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/build/openseadragon/openseadragon.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/changelog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/node_modules/openseadragon/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragon-fabricjs-overlay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragon-imaginghelper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragon-scalebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragon.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragon.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragonScreenshot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragonselection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/openseadragonselection.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/cleanCanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/fillCanvasWith.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/initialize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/leaveCanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/move.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/press.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/release.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/selectMode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/actions/zoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/components/Annotations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/controls/Control.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/controls/Draw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/controls/Move.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/controls/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/dispatcher/Dispatcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/store/Store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/src/utils/convert.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/uikit-icons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/uikit-icons.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/uikit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/uikit.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/svg_to_dzi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/file.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/base_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/base_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/one_epoch_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/one_epoch_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/checkpoint/Zichen_model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/checkpoint/Zichen_model.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/checkpoint/Zichen_model_state_dict.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/data_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/app/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_34_30_fff4ca0678f3974a97449b7cb64b4def.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_34_45_fff4ca0678f3974a97449b7cb64b4def.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_42_15_fff4ca0678f3974a97449b7cb64b4def.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_48_43_ffdd088e3aeda80e45276f8807c710ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/uploads/2019_06_07_14_50_13_fff4ca0678f3974a97449b7cb64b4def.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -481,11 +31,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Deployment/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+            <state relative-caret-position="437">
+              <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="218" column="22" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
+              <folding>
+                <element signature="e#1788#2687#0#HTML" />
+                <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment/app/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1656">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -504,9 +91,15 @@
       <find>utils</find>
       <find>util</find>
       <find>index</find>
-      <find>img_path</find>
       <find>form1</find>
       <find>gpu_id</find>
+      <find>label</find>
+      <find>predictions</find>
+      <find>send_img_1</find>
+      <find>device</find>
+      <find>self.device</find>
+      <find>save</find>
+      <find>img_path</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -517,11 +110,13 @@
       <list>
         <option value="$PROJECT_DIR$/Deployment/app/trained_model/__init__.py" />
         <option value="$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
-        <option value="$PROJECT_DIR$/Deployment/app/templates/upload.html" />
         <option value="$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
         <option value="$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
-        <option value="$PROJECT_DIR$/Deployment/app/__init__.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
         <option value="$PROJECT_DIR$/Deployment/app/model.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/__init__.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/templates/upload.html" />
       </list>
     </option>
   </component>
@@ -553,6 +148,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -560,17 +156,83 @@
               <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
               <item name="be223c" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code_zichen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code_zichen" type="462c0819:PsiDirectoryNode" />
+              <item name="checkpoint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code_zichen" type="462c0819:PsiDirectoryNode" />
+              <item name="dataloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code_zichen" type="462c0819:PsiDirectoryNode" />
+              <item name="deployment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code_zichen" type="462c0819:PsiDirectoryNode" />
+              <item name="deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="asset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="code_zichen" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Deployment/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../be224b" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -596,7 +258,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.__init__">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="be223c" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -619,9 +281,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="be223c" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -636,12 +321,14 @@
       <option name="presentableId" value="Default" />
       <updated>1559854440810</updated>
       <workItem from="1559854447541" duration="15642000" />
-      <workItem from="1560197153840" duration="135000" />
+      <workItem from="1560197153840" duration="3647000" />
+      <workItem from="1560207878960" duration="1691000" />
+      <workItem from="1560279669360" duration="14687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15777000" />
+    <option name="totallyTimeSpent" value="35667000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -656,7 +343,7 @@
     <frame x="1987" y="25" width="1853" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.257886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -667,7 +354,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5002767" side_tool="true" weight="0.3298279" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997233" weight="0.3298279" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.4997233" visible="true" weight="0.3298279" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -676,7 +363,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.14775872" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
     <layout-to-restore>
@@ -708,7 +395,8 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/be223c$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1560197300547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app" />
+    <SUITE FILE_PATH="coverage/be223c$test.coverage" NAME="test Coverage Results" MODIFIED="1560291804491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app/code_zichen/deployment" />
+    <SUITE FILE_PATH="coverage/be223c$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1560298128927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Deployment/app/config.py" />
@@ -724,13 +412,82 @@
     <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
     <entry file="file://$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
     <entry file="file://$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/asset/0a4c9c21d3666deb33fa50d6991e9d6b.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Deployment/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        <state relative-caret-position="437">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="218" column="22" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
+          <folding>
+            <element signature="e#1788#2687#0#HTML" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

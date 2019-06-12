@@ -1,56 +1,91 @@
-from graph.loss.loss import *
+import torch
+import numpy as np
+
+# SR : Segmentation Result
+# GT : Ground Truth
+
+def get_accuracy(SR, GT, threshold=0.5):
+    SR = SR > threshold
+    GT = GT == torch.max(GT)
+    corr = torch.sum(SR == GT)
+    tensor_size = SR.numel()
+    acc = float(corr) / float(tensor_size)
+
+    return acc
 
 
-def eval_true_fake(dis, gen, data_loader, device, config, max_batch=None):
-    dis.eval()
-    gen.eval()
+def get_sensitivity(SR, GT, threshold=0.5):
+    # Sensitivity == Recall
+    SR = SR > threshold
+    GT = GT == torch.max(GT)
 
-    cnt = 0
-    unl_acc, gen_acc, max_unl_acc, max_gen_acc = 0., 0., 0., 0.
-    for i, (images, _) in enumerate(data_loader.get_iter()):
-        with torch.no_grad():
-            images = images.to(device)
-            noise = torch.Tensor(images.size(0), config['model']['noise_size']).uniform_().to(device)
+    # TP : True Positive
+    # FN : False Negative
+    TP = ((SR == 1) + (GT == 1)) == 2
+    FN = ((SR == 0) + (GT == 1)) == 2
 
-        unl_feat = dis(images, feat=True)  # use median feature outputs
-        gen_feat = dis(gen(noise), feat=True)
+    SE = float(torch.sum(TP)) / (float(torch.sum(TP + FN)) + 1e-6)
 
-        unl_logits = dis.out_net(unl_feat)
-        gen_logits = dis.out_net(gen_feat)
-
-        unl_logsumexp = log_sum_exp(unl_logits)
-        gen_logsumexp = log_sum_exp(gen_logits)
-
-        # true-fake accuracy
-        # gt 0.5 means inputs is larger than 0
-        unl_acc += torch.mean(torch.sigmoid(unl_logsumexp).gt(0.5).float()).item()
-        gen_acc += torch.mean(torch.sigmoid(gen_logsumexp).gt(0.5).float()).item()
-        # top-1 logit compared to 0: to verify Assumption (2) and (3)
-        max_unl_acc += torch.mean(unl_logits.max(1)[0].gt(0.0).float()).item()
-        max_gen_acc += torch.mean(gen_logits.max(1)[0].gt(0.0).float()).item()
-
-        cnt += 1
-        if max_batch is not None and i >= max_batch - 1:
-            break
-
-    return float(unl_acc) / cnt, float(gen_acc) / cnt, float(max_unl_acc) / cnt, float(max_gen_acc) / cnt
+    return SE
 
 
-def eval_classification(dis, gen, data_loader, device, max_batch=None):
-    dis.eval()
-    gen.eval()
+def get_specificity(SR, GT, threshold=0.5):
+    SR = SR > threshold
+    GT = GT == torch.max(GT)
 
-    loss, incorrect, cnt = 0, 0, 0
-    for i, (images, labels) in enumerate(data_loader.get_iter()):
-        with torch.no_grad():
-            images = images.to(device)
-            labels = labels.to(device)
-        pred_prob = dis(images)
-        loss += d_criterion(pred_prob, labels).item() * images.shape[0]
-        cnt += images.shape[0]
-        incorrect += torch.ne(torch.max(pred_prob, 1)[1], labels).data.sum()
-        if max_batch is not None and i >= max_batch - 1:
-            break
-    average_loss = float(loss) / float(cnt)
-    error_rate = float(incorrect) / float(cnt)
-    return average_loss, error_rate, int(incorrect)
+    # TN : True Negative
+    # FP : False Positive
+    TN = ((SR == 0) + (GT == 0)) == 2
+    FP = ((SR == 1) + (GT == 0)) == 2
+
+    SP = float(torch.sum(TN)) / (float(torch.sum(TN + FP)) + 1e-6)
+
+    return SP
+
+
+def get_precision(SR, GT, threshold=0.5):
+    SR = SR > threshold
+    GT = GT == torch.max(GT)
+
+    # TP : True Positive
+    # FP : False Positive
+    TP = ((SR == 1) + (GT == 1)) == 2
+    FP = ((SR == 1) + (GT == 0)) == 2
+
+    PC = float(torch.sum(TP)) / (float(torch.sum(TP + FP)) + 1e-6)
+
+    return PC
+
+
+def get_F1(SR, GT, threshold=0.5):
+    # Sensitivity == Recall
+    SE = get_sensitivity(SR, GT, threshold=threshold)
+    PC = get_precision(SR, GT, threshold=threshold)
+
+    F1 = 2 * SE * PC / (SE + PC + 1e-6)
+
+    return F1
+
+
+def get_JS(SR, GT, threshold=0.5):
+    # JS : Jaccard similarity
+    SR = SR > threshold
+    GT = GT == torch.max(GT)
+
+    Inter = torch.sum((SR + GT) == 2)
+    Union = torch.sum((SR + GT) >= 1)
+
+    JS = float(Inter) / (float(Union) + 1e-6)
+
+    return JS
+
+
+def get_DC(SR, GT, threshold=0.5):
+    # DC : Dice Coefficient
+    SR = SR > threshold
+    GT = GT == torch.max(GT)
+
+    Inter = torch.sum((SR + GT) == 2)
+    DC = float(2 * Inter) / (float(torch.sum(SR) + torch.sum(GT)) + 1e-6)
+
+    return DC
