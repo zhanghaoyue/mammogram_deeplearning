@@ -23,6 +23,10 @@ app.config.from_object(config)
 photos = UploadSet('PHOTO')
 configure_uploads(app, photos)
 
+segmentation_model_path = './code_zichen/checkpoint/segmentation_model.pth'
+classification_model_path = './code_zichen/checkpoint/classification_model.pth'
+model = Pytorchmodel(segmentation_model_path, classification_model_path)
+
 
 @app.route('/upload_image', methods=['POST', 'GET'])
 def upload():
@@ -80,7 +84,7 @@ def predict():
     return flask.jsonify(data)
 
 
-def predict_img(img, is_numpy=False):
+def predict_img(img):
     """run pytorch model prediction and get the output probablity and label result
     to be called by predict()
 
@@ -156,13 +160,4 @@ def shutdown():
     return 'Server shutting down...'
 
 
-if __name__ == '__main__':
-    
-    print("Starting Breast Detection Server, please wait ...")
-    print("Please wait until server has fully started")
-    model_path = './code_zichen/checkpoint/Zichen_model.pth'
-    model = Pytorchmodel(model_path=model_path, img_shape=[
-        512, 512], img_channel=1)
-
-    app.run(host='127.0.0.1', port=5000, debug=True)
 

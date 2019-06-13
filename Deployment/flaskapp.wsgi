@@ -1,5 +1,5 @@
 ## Virtualenv settings
-activate_this='/var/www/deep_zoom_test/app/venv/bin/activate_this.py'
+activate_this='/var/www/Deployment/app/venv/bin/activate_this.py'
 exec(open(activate_this).read(),dict(__file__=activate_this))
 
 
@@ -9,7 +9,7 @@ from logging import Formatter, FileHandler
 import os
 
 
-ALLDIRS =['/var/www/deep_zoom_test/app/venv/lib/python3.5/site-packages']
+ALLDIRS =['/var/www/Deployment/app/venv/lib/python3.6/site-packages']
 
 #Remember original sys.path.
 prev_sys_path= list(sys.path)
@@ -24,8 +24,8 @@ for item in list(sys.path):
         sys.path.remove(item)
 sys.path[:0]= new_sys_path
 
-sys.path.insert(0,"/var/www/deep_zoom_test")
-os.chdir("/var/www/deep_zoom_test")
+sys.path.insert(0,"/var/www/Deployment")
+os.chdir("/var/www/Deployment")
 
 
 from app import app as application

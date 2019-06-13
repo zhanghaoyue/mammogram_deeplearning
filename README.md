@@ -68,3 +68,79 @@ Please put your code into the structure
 
 # Model Deployment - Harry
 
+## 1. Tools
+   Backend:Flask, Pytorch
+   
+   Frontend: uikit, Vue.js, JQuery.js
+   
+   Deployment: Gunicorn, Docker
+
+## 2. Code structure
+   ```
+   flask-app/
+   ├── server.py   # contains major code of flask app
+   ├── wsgi.py     # main run
+   ├── Dockerfile  # use this to generate docker image
+   ├── model.py    # pytorch model prediction functions
+   ├── requirements.txt # all required libraries
+   ├── config.py   # Flask.app config
+   ├── code_zichen/ # all Zichen's model source code
+   ├── templates/  # all html pages
+       ├── front_page.html # introduction page
+       ├── index.html # initial loading page
+       ├── team_member.html # list of team members
+       ├── upload.html # all upload and prediction, display functions
+   ├── uploads/ # for preload saved models
+   ├── venv/ # virtual env for development
+   ├── static/ # all the javascript library and static files, css, uikit
+   
+   ```
+   
+## 3. Build from source (Recommended)
+
+This is recommended because the base image is from Nvidia
+and it is very big (7Gb), it's faster to directly build
+than transfer the image.
+
+Run the cmd from terminal in flask-app folder
+    
+    sudo docker build -t flask-app .
+    
+The Dockerfile not only contains a Ubuntu system with CUDA and pytorch but also
+include the source code for the app.
+Use the generated Docker image to run the flask app
+
+## 4. Run the Flask app with Docker image
+
+Run the following code
+    
+    # load the docker image if not built from source
+    sudo docker load -i flask-app.tar
+    # run the docker image
+    sudo docker run --runtime=nvidia -p 5000:5000 flask-app
+
+
+## 5. How to use the webpage
+
+There are 3 sub pages of the website. You can nagivate 
+using the navbar function.
+
+Introduction contains model introduction
+
+Model Prediction contains the major function:
+
+Upload: select a input Mamogram image
+Predict: click this button for result
+
+after click the result, three images will show up and a 
+prediction result will be shown at the bottom.
+
+- The first image is the original input image.
+
+- The second image is the heatmap in grayscale
+
+- the third image is the original image overlay with heatmap
+
+The probability values and the label shows Cancer/No Cancer result
+
+    
