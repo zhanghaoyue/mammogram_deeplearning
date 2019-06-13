@@ -102,6 +102,8 @@ This is recommended because the base image is from Nvidia
 and it is very big (7Gb), it's faster to directly build
 than transfer the image.
 
+pull the base image from nvcr.io/nvidia/pytorch:19.01-py3
+
 Run the cmd from terminal in flask-app folder
     
     sudo docker build -t flask-app .

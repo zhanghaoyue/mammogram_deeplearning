@@ -11,6 +11,15 @@ import matplotlib.pyplot as plt
 
 
 class Pytorchmodel:
+    """Pytorchmodel class for model
+
+
+        Parameters:
+            segmentation_model_path: saved pytorch model for segmentation
+            classification_model_path: saved pytorch model for classification
+            classes_txt: None
+
+    """
     def __init__(self, segmentation_model_path, classification_model_path, classes_txt=None):
 
         self.segmentation_model = module_arch.AttU_Net(img_ch=1, output_ch=2).cuda()
@@ -26,7 +35,15 @@ class Pytorchmodel:
             self.idx2label = None
 
     def predict(self, img_path):
+        """predict, generate attention map, output attention map and
+        predict cancer result and probability
 
+        Parameters:
+        img_path: load image from flask upload image folder
+
+        Return:
+            result: original image, cancener label, probability, attention map, overlay
+        """
         basic_transform_img = transforms.Compose([transforms.Resize((512, 512)),
                                                   transforms.ToTensor()])
 

@@ -2,70 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94809da3-41b0-4d0a-ba3c-c4a7063fd535" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Deployment/flask-app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/be223c.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/be223c.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/.flaskapp.wsgi.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/base_trainer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/one_epoch_trainer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/run.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/checkpoint/Zichen_model.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/config/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/data_loader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/config_test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/loss/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/loss/loss.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/metric.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/Untitled.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/logger.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/prepare_device.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/visualization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/.Rhistory" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/asset/honey_im_subtle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/ava.setup.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/ajax_loader_gray_32.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit-icons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit-icons.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/vue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/npm-debug.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/static/webpack.config.babel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/front_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/team_member.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/flaskapp.wsgi" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flaskapp.wsgi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/templates/upload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Deployment/flask-app/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state>
+              <caret lean-forward="true" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -88,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Deployment/flask-app/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="161">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -97,14 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="405">
-                <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+              <first_editor relative-caret-position="428">
+                <caret line="109" column="4" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/templates/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -112,8 +60,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="552">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-271">
-              <caret line="129" column="45" lean-forward="true" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+            <state relative-caret-position="69">
+              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -189,6 +140,7 @@
         <option value="$PROJECT_DIR$/Deployment/flask-app/server.py" />
         <option value="$PROJECT_DIR$/Deployment/flask-app/model.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/templates/upload.html" />
       </list>
     </option>
   </component>
@@ -203,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,11 +168,23 @@
               <item name="be223c" type="462c0819:PsiDirectoryNode" />
               <item name="Deployment" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="flask-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+              <item name="flask-app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,12 +306,13 @@
       <workItem from="1560197153840" duration="3647000" />
       <workItem from="1560207878960" duration="1691000" />
       <workItem from="1560279669360" duration="16545000" />
-      <workItem from="1560354426843" duration="15487000" />
+      <workItem from="1560354426843" duration="17504000" />
+      <workItem from="1560451446339" duration="2539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53012000" />
+    <option name="totallyTimeSpent" value="57568000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,7 +327,7 @@
     <frame x="1987" y="25" width="1853" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26065302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26342005" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" weight="0.3298279" />
@@ -372,7 +338,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5002767" side_tool="true" weight="0.3298279" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3298279" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997233" visible="true" weight="0.3298279" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997233" weight="0.3298279" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -431,130 +397,22 @@
     <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
     <entry file="file://$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
     <entry file="file://$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/asset/0a4c9c21d3666deb33fa50d6991e9d6b.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="218" column="22" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
-          <folding>
-            <element signature="e#1788#2687#0#HTML" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirement.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/requirement.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/src/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/src/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/src/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/asset/0a4c9c21d3666deb33fa50d6991e9d6b.png" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/model.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/server.py" />
+    <entry file="file://$PROJECT_DIR$/requirement.txt" />
+    <entry file="file://$PROJECT_DIR$/Deployment/requirement.txt" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/src/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/src/model.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/src/server.py" />
     <entry file="file://$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -562,13 +420,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/Dockerfile" />
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -600,44 +452,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="129" column="45" lean-forward="true" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Deployment/flask-app/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="161">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Deployment/flask-app/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state>
+          <caret lean-forward="true" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="405">
-            <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <first_editor relative-caret-position="428">
+            <caret line="109" column="4" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
         </state>
       </provider>
     </entry>
