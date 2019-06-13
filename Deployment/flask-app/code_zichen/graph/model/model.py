@@ -100,15 +100,15 @@ class AttU_Net_Classification(nn.Module):
 
         # self.adaptive_avgpool = nn.AdaptiveAvgPool2d((8, 8))
 
-        self.classification = nn.Sequential(nn.Conv2d(1024, 256, kernel_size=3, stride=2, padding=1, bias=True),
+        self.classification = nn.Sequential(nn.Conv2d(1024, 16, kernel_size=3, stride=2, padding=1, bias=True),
                                             nn.MaxPool2d(kernel_size=4, stride=4),
                                             )
         self.fc = nn.Sequential(nn.Dropout(),
-                                nn.Linear(256 * 4 * 4, 1),
+                                nn.Linear(16 * 4 * 4, 1),
                                 nn.Sigmoid())
 
     def forward(self, x, mass_region_attention):
-        x = x * (1 + mass_region_attention)
+        x = x * (0.1 + mass_region_attention)
         # encoding path
         x1 = self.Conv1(x)
         # print(x1.shape)
