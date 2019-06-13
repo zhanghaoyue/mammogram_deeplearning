@@ -112,7 +112,13 @@ Use the generated Docker image to run the flask app
 
 ## 4. Run the Flask app with Docker image
 
-Run the following code
+4.1 Download or pull image from Docker Hub.
+
+go to hub.docker.com
+search for: zhanghaoyue/flask-app-mammogram
+
+
+4.2 Run the following code
     
     # load the docker image if not built from source
     sudo docker load -i flask-app.tar
