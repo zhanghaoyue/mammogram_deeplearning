@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/uikit.min.css" />
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/uikit.min.js"></script>
+    <script src="../static/js/uikit-icons.min.js"></script>
+    <script>
+        new Vue()
+    </script>
+    <script type=text/javascript>
+      $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <script type=text/javascript>
+            function ajaxForm_1(){
+                var formData = new FormData(document.getElementById("form1"));
+                $.ajax({
+                    type: 'POST',
+                    url: $SCRIPT_ROOT + '/upload_image',
+                    data: formData,
+                    contentType:false,
+                    processData:false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.result!=null) {
+                            result_1.predictions = data.result;
+                            result_1.img_path_1 = data.img_path_1;
+                            result_1.img_path_2 = data.img_path_2;
+                            result_1.img_path_3 = data.img_path_3;
+                        }
+                        $("send_img_1").src=data.img_path_1
+                        $("send_img_2").src=data.img_path_2
+                        $("send_img_3").src=data.img_path_3
+                    },
+                    error: function () {
+                        alert("Error: upload image");
+                    }
+                });
+            }
+            /*
+            function ajaxForm_2(){
+                var formData = new FormData(document.getElementById("form2"));
+                $.ajax({
+                    type: 'POST',
+                    url: $SCRIPT_ROOT + '/upload_image',
+                    data: formData,
+                    contentType:false,
+                    processData:false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.result!=null) {
+                            result_2.predictions = data.result.predictions;
+                            result_2.img_path = data.result.img_path;
+                        }
+                        $("send_img_2").src=data.img_path
+                    },
+                    error: function () {
+                        alert("Error: upload image");
+                    }
+                });
+            }
+            */
+    </script>
+</head>
+<body>
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-small-bottom">
+        <div class="uk-background-primary uk-light">
+            <nav class="uk-navbar uk-margin-small-bottom uk-margin-small-top">
+            <a class="uk-light uk-navbar-item uk-logo" href="https://www.mii.ucla.edu"><strong class="uk-h3">UCLA MII Lab</strong></a>
+                <ul class="uk-navbar-nav uk-hidden-small ">
+                        <li>
+                            <a href="{{ url_for('front_page') }}">
+                                <span class="uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
+                                <span class="uk-button uk-button-text">Introduction</span>
+                            </a>
+                        </li>
+                        <li class="uk-active">
+                            <a href="{{ url_for('upload') }}">
+                                <span class="uk-icon uk-margin-small-right" uk-icon="icon: cog"></span>
+                                <span class="uk-button uk-button-text">Model Prediction</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('team_member') }}">
+                                <span class="uk-icon uk-margin-small-right" uk-icon="icon: social"></span>
+                                <span class="uk-button uk-button-text">Team Member</span>
+                            </a>
+                        </li>                           
+                </ul>
+            </nav>
+        </div>
+        
+        <h3>Breast Cancer Detection with CT Imaging</h3>
+        <hr class="uk-margin-medium">
+        <h4>Upload Image</h4>
+        <div class="uk-grid-small uk-child-width-expand@m uk-text-center uk-grid-match" uk-grid>
+            <div class="uk-card uk-card-default uk-card-body">
+                <h4>Attention Based Model</h4>
+                <form id="form1" onsubmit="return false" enctype="multipart/form-data">
+                    <div class="js-upload" uk-form-custom>
+                        <input type='file' id="img_id" name="img">
+                        <button class="uk-button uk-button-secondary" type="button">Select Image</button>
+                    </div>
+                    <button class="uk-button uk-button-danger" type="button" onclick="ajaxForm_1()">Predict</button>
+                </form> 
+            </div>
+            <!--
+            <div class="uk-card uk-card-default uk-card-body">
+                <h4>Multi-Instance Model</h4>
+                <form id="form2" onsubmit="return false" enctype="multipart/form-data">
+                    <div class="js-upload" uk-form-custom>
+                        <input type='file' id="img_id" name="img">
+                        <button class="uk-button uk-button-secondary" type="button">Select Image</button>
+                    </div>
+                    <button class="uk-button uk-button-danger" type="button" onclick="ajaxForm_2()">Predict</button>
+                </form>  
+            </div>
+            -->
+        </div>
+        <h4>Image Display and Prediction Mask</h4>
+        <hr class="uk-margin-small">
+        <div class="uk-grid-small uk-child-width-expand@m uk-text-center uk-grid-match" uk-grid>
+            <div class="uk-card uk-card-default uk-card-body">
+                <div id="app_1" class="uk-inline" v-show="change_status">
+                    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                                <h3 class="uk-card-title">Original Image</h3>
+                                <img id="send_img_1" :src="img_path_1" height="200" width="150">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                                <h3 class="uk-card-title">Heatmap</h3>
+                                <img id="send_img_2" :src="img_path_2" height="200" width="150">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                                <h3 class="uk-card-title">Overlay</h3>
+                                <img id="send_img_3" :src="img_path_3" height="200" width="150">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-overlay uk-position-top"></div>
+                    <div id="app_1" v-show="change_status">
+                        <table id="generatedTable">
+                            <thead>
+                                <tr>
+                                    <th>Cancer</th>
+                                    <th>Probability</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr v-for="(item,index) in predictions">
+                                    <td >[[ item.label ]]</td>
+                                    <td>[[ item.probability ]]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="uk-card uk-card-default uk-card-body">
+                <div id="app_2" class="uk-inline">
+                    <img id="send_img_2" :src="img_path"/>
+                    <div class="uk-overlay uk-position-top"></div>
+                    <div id="app_2" v-show="change_status">
+                        <table id="generatedTable">
+                            <thead>
+                                <tr>
+                                    <th>Cancer</th>
+                                    <th>Probability</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr v-for="(item,index) in predictions">
+                                    <td >[[ item.label ]]</td>
+                                    <td>[[ item.probability ]]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+
+    </div>
+    <script>
+        var result_1 = new Vue({
+            el:"#app_1",
+            data:{
+                predictions:null,
+                img_path_1:null,
+                img_path_2:null,
+                img_path_3:null,
+            },
+            delimiters: ['[[',']]'],
+            computed:{
+                change_status: function () {
+                    console.log(this.predictions);
+                    console.log(this.predictions != null);
+                    return this.predictions != null
+                }
+            }
+        })
+        /*
+        var result_2 = new Vue({
+            el:"#app_2",
+            data:{
+                predictions:null,
+            },
+            delimiters: ['[[',']]'],
+            computed:{
+                change_status: function () {
+                    console.log(this.predictions);
+                    console.log(this.predictions != null);
+                    return this.predictions != null
+                }
+            }
+        })
+        */
+    </script>
+</body>
+</html>

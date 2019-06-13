@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/uikit.min.css" />
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/uikit.min.js"></script>
+    <script src="../static/js/uikit-icons.min.js"></script>
+<body>
+	<div class="uk-container uk-container-center uk-margin-top uk-margin-small-bottom">
+		<div class="uk-background-primary uk-light">
+			<nav class="uk-navbar uk-margin-small-bottom uk-margin-small-top">
+	        <a class="uk-light uk-navbar-item uk-logo" href="https://www.mii.ucla.edu"><strong class="uk-h3">UCLA MII Lab</strong></a>
+	            <ul class="uk-navbar-nav uk-hidden-small ">
+	            		<li>
+	                        <a href="{{ url_for('front_page') }}">
+	                        	<span class="uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
+	                        	<span class="uk-button uk-button-text">Introduction</span>
+	                    	</a>
+	            		</li>
+	                    <li>
+	                        <a href="{{ url_for('upload') }}">
+	                        	<span class="uk-icon uk-margin-small-right" uk-icon="icon: cog"></span>
+	                        	<span class="uk-button uk-button-text">Model Prediction</span>
+	                    	</a>
+	                    </li>
+	                    <li class="uk-active">
+	                        <a href="{{ url_for('team_member') }}">
+								<span class="uk-icon uk-margin-small-right" uk-icon="icon: social"></span>
+	                        	<span class="uk-button uk-button-text">Team Member</span>
+	                        </a>
+						</li>	                    	
+	            </ul>
+	        </nav>
+		</div>
+		<div class="uk-grid">
+			<article class="uk-article">
+
+			    <h1 class="uk-article-title"><a class="uk-link-reset" href="">Team Members List</a></h1>
+
+			    <p class="uk-article-meta">in alphabetical order</p>
+
+				<p class="uk-text-lead">David Gordon</p>
+
+			    <p>UCLA student</p>
+
+			    <p class="uk-text-lead">Yannan Lin</p>
+
+			    <p>UCLA student</p>
+
+			    <p class="uk-text-lead">Zichen Wang</p>
+
+			    <p>UCLA student</p>
+
+			    <p class="uk-text-lead">Harry Zhang</p>
+
+			    <p>UCLA student</p>
+
+			    <div class="uk-grid-small uk-child-width-auto" uk-grid>
+			        <div>
+			            <a class="uk-button uk-button-text" href="#">Read more</a>
+			        </div>
+			    </div>
+
+			</article>
+
+		</div>       
+	</div>
+</body>
+</html>

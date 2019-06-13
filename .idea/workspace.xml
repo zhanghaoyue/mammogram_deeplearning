@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94809da3-41b0-4d0a-ba3c-c4a7063fd535" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Deployment/flask-app/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/be223c.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/be223c.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/.flaskapp.wsgi.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/base_trainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/one_epoch_trainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/agent/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/checkpoint/Zichen_model.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/config/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/data_loader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/config_test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/loss/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/loss/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/metric/metric.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/prepare_device.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/code_zichen/utils/visualization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/.Rhistory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/asset/honey_im_subtle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/ava.setup.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit-rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/css/uikit.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/images/ajax_loader_gray_32.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit-icons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit-icons.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/uikit.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/js/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/npm-debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/static/webpack.config.babel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/front_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/team_member.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/app/templates/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flaskapp.wsgi" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flaskapp.wsgi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="405">
+                <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-271">
+              <caret line="129" column="45" lean-forward="true" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>use_gpu</find>
+      <find>pytorch_</find>
+      <find>graph</find>
+      <find>model_path</find>
+      <find>magic_number</find>
+      <find>unpickler</find>
+      <find>pickle_module</find>
+      <find>utils</find>
+      <find>util</find>
+      <find>index</find>
+      <find>form1</find>
+      <find>gpu_id</find>
+      <find>label</find>
+      <find>predictions</find>
+      <find>send_img_1</find>
+      <find>device</find>
+      <find>self.device</find>
+      <find>img_path</find>
+      <find>save</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Deployment/app/trained_model/__init__.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
+        <option value="$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
+        <option value="$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/model.py" />
+        <option value="$PROJECT_DIR$/Deployment/app/templates/upload.html" />
+        <option value="$PROJECT_DIR$/Deployment/requirement.txt" />
+        <option value="$PROJECT_DIR$/requirement.txt" />
+        <option value="$PROJECT_DIR$/Deployment/app/__init__.py" />
+        <option value="$PROJECT_DIR$/Deployment/src/server.py" />
+        <option value="$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/__init__.py" />
+        <option value="$PROJECT_DIR$/Deployment/Dockerfile" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/requirements.txt" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/helpdesk/requirement.txt" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/Dockerfile" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/wsgi.py" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/config.py" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/server.py" />
+        <option value="$PROJECT_DIR$/Deployment/flask-app/model.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1987" />
+    <option name="y" value="119" />
+    <option name="width" value="1657" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
+              <item name="be223c" type="462c0819:PsiDirectoryNode" />
+              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../be224b" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Deployment/app" />
+      <recent name="$PROJECT_DIR$/Deployment/app/trained_model" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.wsgi">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="be223c" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Deployment/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Deployment/app/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="be223c" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="be223c" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Deployment/flask-app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Deployment/flask-app/wsgi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94809da3-41b0-4d0a-ba3c-c4a7063fd535" name="Default Changelist" comment="" />
+      <created>1559854440810</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559854440810</updated>
+      <workItem from="1559854447541" duration="15642000" />
+      <workItem from="1560197153840" duration="3647000" />
+      <workItem from="1560207878960" duration="1691000" />
+      <workItem from="1560279669360" duration="16545000" />
+      <workItem from="1560354426843" duration="15487000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="53012000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1987" y="25" width="1853" height="1175" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26065302" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" weight="0.3298279" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5002767" side_tool="true" weight="0.3298279" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.3298279" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997233" visible="true" weight="0.3298279" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.3298279" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.14775872" />
+      <window_info anchor="right" id="Database" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24958494" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.3298279" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.3298279" />
+      <window_info anchor="right" id="Remote Host" order="0" />
+      <window_info anchor="right" id="SciView" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/be223c$test.coverage" NAME="test Coverage Results" MODIFIED="1560291804491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app/code_zichen/deployment" />
+    <SUITE FILE_PATH="coverage/be223c$wsgi.coverage" NAME="wsgi Coverage Results" MODIFIED="1560382458434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/flask-app" />
+    <SUITE FILE_PATH="coverage/be223c$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1560298128927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Deployment/app/config.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/torch/serialization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="228" column="23" selection-start-line="228" selection-start-column="23" selection-end-line="228" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/base_model.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/asset/0a4c9c21d3666deb33fa50d6991e9d6b.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="218" column="22" selection-start-line="218" selection-start-column="22" selection-end-line="218" selection-end-column="22" />
+          <folding>
+            <element signature="e#1788#2687#0#HTML" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/src/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/src/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/src/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/helpdesk/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-271">
+          <caret line="129" column="45" lean-forward="true" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="405">
+            <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
