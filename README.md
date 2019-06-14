@@ -61,6 +61,11 @@ Please put your code into the structure
 
 # Model Training - Zichen
 
+## Requirements
+* Python >= 3.5
+* PyTorch >= 1.0.0
+* tensorboard >= 1.7.0
+* tensorboardX >= 1.2
 
 
 # Model Training - David
@@ -72,8 +77,43 @@ Please put your code into the structure
    Backend:Flask, Pytorch
    
    Frontend: uikit, Vue.js, JQuery.js
-   
+  
+## 2. Code structure
    Deployment: Gunicorn, Docker
+
+    ├── agent  # Information flow controller
+    │   ├── base_trainer.py  # model trainer for INBreast dataset
+    │   ├── base_trainer_UCLA.py # model trainer for UCLA dataset
+    │   ├── __init__.py
+    │   ├── one_epoch_trainer.py
+    │   ├── one_epoch_trainer_UCLA.py
+    │   ├── run.sh 
+    │   ├── run_UCLA.sh
+    │   ├── train.py  # main script to start training
+    │   └── train_UCLA.py
+    ├── config
+    │   ├── config.json  # holds configuration for training
+    │   └── config_UCLA.json
+    ├── dataloader  # data loading
+    │   ├── base_data_loaders.py
+    │   ├── data_loader.py
+    │   └── __init__.py
+    ├── graph  # models and evaluation metrics
+    │   ├── metric
+    │   │   ├── __init__.py
+    │   │   └── metric.py
+    │   └── model
+    │       ├── base_model.py
+    │       ├── __init__.py
+    │       └── model.py
+    └── utils  # utility functions
+        ├── __init__.py
+        ├── logger.py
+        ├── prepare_device.py
+        ├── preprocess.py
+        ├── util.py
+        └── visualization.py
+
 
 ## 2. Code structure
    ```

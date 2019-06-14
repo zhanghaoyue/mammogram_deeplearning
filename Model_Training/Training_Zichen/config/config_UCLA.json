@@ -1,0 +1,49 @@
+{
+    "name": "BE223C-UCLA-Classification",
+    "n_gpu": 1,
+
+    "model": {
+    },
+    "data_loader": {
+        "type": "UCLA",
+        "args":{
+            "train_batch_size": 32,
+            "test_batch_size": 32,
+            "num_workers": 8,
+            "drop_last": true
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.01,
+            "weight_decay": 0
+        }
+    },
+
+    "scheduler": {
+        "type": "MultiStepLR",
+        "args":{
+            "milestones": [30, 60],
+            "gamma": 0.1
+        }
+    },
+    "trainer": {
+        "max_epochs": 100,
+        "save_dir": "../experiment/checkpoint",
+        "save_period": 20,
+        "val_period": 1,
+        "vis_period": 1,
+        "log_display_period": 100,
+        "log_write_iteration": 1,
+        "verbosity": 2,
+
+
+        "monitor": "min val_loss",
+        "early_stop": 100000,
+        "log_step_ratio": 1,
+
+        "tensorboardX": true,
+        "log_dir": "../experiment/log"
+    }
+}
