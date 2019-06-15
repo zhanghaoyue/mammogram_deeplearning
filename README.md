@@ -61,6 +61,68 @@ Please put your code into the structure
 
 # Model Training - Zichen
 
+## Requirements
+* Python >= 3.5
+* PyTorch >= 1.0.0
+* tensorboard >= 1.7.0
+* tensorboardX >= 1.2
+
+## Code structure
+    Model_Training/Training_Zichen/
+    ├── agent  # Information flow controller
+    │   ├── base_trainer.py  # model trainer for INBreast dataset
+    │   ├── base_trainer_UCLA.py # model trainer for UCLA dataset
+    │   ├── __init__.py
+    │   ├── one_epoch_trainer.py
+    │   ├── one_epoch_trainer_UCLA.py
+    │   ├── run.sh 
+    │   ├── run_UCLA.sh
+    │   ├── train.py  # main script to start training
+    │   └── train_UCLA.py
+    ├── config  # json config file support for convenient parameter tuning.
+    │   ├── config.json  # holds configuration for training
+    │   └── config_UCLA.json
+    ├── dataloader  # data loading
+    │   ├── base_data_loaders.py
+    │   ├── data_loader.py
+    │   └── __init__.py
+    ├── graph  # models and evaluation metrics
+    │   ├── metric
+    │   │   ├── __init__.py
+    │   │   └── metric.py
+    │   └── model
+    │       ├── base_model.py
+    │       ├── __init__.py
+    │       └── model.py
+    └── utils  # utility functions
+        ├── __init__.py
+        ├── logger.py
+        ├── prepare_device.py
+        ├── preprocess.py
+        ├── util.py
+        └── visualization.py
+        
+## Usage
+Try `python train.py -c config.json` or `sh run.sh` to run code.
+
+### Using config files
+Modify the configurations in `.json` config files, then run:
+
+  ```
+  python train.py --config config.json
+  ```
+  
+### Using Multiple GPU
+Enable multi-GPU training by setting `n_gpu` argument of the config file to larger number.
+First n devices will be used by default if configured to use smaller number of gpu than available.
+You can specify indices of available GPUs by cuda environmental variable.
+  ```
+  python train.py --device 2,3 -c config.json
+  ```
+  This is equivalent to
+  ```
+  CUDA_VISIBLE_DEVICES=2,3 python train.py -c config.py
+  ```
 
 
 # Model Training - David
