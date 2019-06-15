@@ -52,125 +52,6 @@ import mg_bag_loader
 
 import SimpleITK as sitk
 
-
-"""
-
-Set paths to imaging and clinical data, balance data, preprocess data
-
-"""
-
-#############Set path's to images, clinical dataframe, home folder##############
-
-mg_images = '/home/d.gordon/image_athena_no_implant/'
-bc_clinical_sub = pd.read_csv('/home/d.gordon/label_athena_no_implant.csv',low_memory=False)
-d_path = '/home/d.gordon/'
-
-
-    ##############################Balance Data#####################################
-
-bc_clinical_subset_1 = bc_clinical_sub.loc[bc_clinical_sub['cancer_label']==1]
-bc_clinical_subset_0 = bc_clinical_sub.loc[bc_clinical_sub['cancer_label']==0].sample(n=len(bc_clinical_subset_1),random_state=546)
-bc_clinical_subset = bc_clinical_subset_1.append(bc_clinical_subset_0)
-
-    ###########################Preprocess Images###################################
-
-
-    ## read in image file and apply image processing
-
-for row in bc_clinical_subset.itertuples(index=False):
-    try:
-        img = cv2.imread(mg_images+row.filename+'.jpg')
-
-        grayscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-        grayscale[grayscale>254] = 0
-
-        ret, th = cv2.threshold(grayscale, 0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-
-        bbox = cv2.boundingRect(th)
-
-        x,y,w,h = bbox
-
-        foreground = img[y:y+h, x:x+w]
-
-        cv2.imwrite(d_path+'preprocessed5/'+row.filename+'.png',foreground)
-    except:
-        continue
-        
-
-images = []
-patchess = []
-for filename in os.listdir(d_path+ 'preprocessed5/'):
-    img = cv2.imread(d_path + 'preprocessed5/'+filename)
-    patches = image.extract_patches_2d(img,max_patches=50,patch_size=(128,128))
-    images.append(img)
-    patchess.append(patches)
-    
-bc_clinical_subset.reset_index(inplace=True,drop=True)
-
-data = {}
-
-for i in range(0,len(bc_clinical_subset)):
-    label = bc_clinical_subset.cancer_label[i]
-    patient = bc_clinical_subset.filename[i]
-    for patch in patchess:
-        patch_level_of_images = patch #all images(580) with 50 patches per image
-        for patches in patch_level_of_images:
-            patch_level_of_patch = patches #one image(1) with 50 patches per image
-
-        # load data
-            img = patch_level_of_patch # 50 patches per image value.
-                #+bc_clinical_subset.filename[0]
-
-            data[patient] = {
-            'imgs':img,
-            'label':label
-                }
-    
-transform_train = transforms.Compose([
-    transforms.ToPILImage(),
-    transforms.RandomRotation(90),
-    #transforms.RandomResizedCrop(128),
-    transforms.RandomHorizontalFlip(),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5,0.5,0.5],
-                         std=[0.5,0.5,0.5])
-    ])
-
-transform_test = transforms.Compose([
-    transforms.ToPILImage(),
-    #transforms.Resize(128),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5,0.5,0.5],
-                             std=[0.5,0.5,0.5])
-    ])
-
-dataset_transform = {'train':transform_train, 'test':transform_test}
-                
-    
-num_folds = 10
-# parameters
-folds = []
-output = '%s/indices_%s_fold.pkl' %(d_path,num_folds)
-# check if the folder exist
-if not os.path.exists(output):
-# create the stratified fold
-    skf = StratifiedKFold(n_splits=num_folds, shuffle=True, random_state=102)
-    for train_index,test_index in skf.split(bc_clinical_subset.filename,bc_clinical_subset.cancer_label):
-        folds.append(bc_clinical_subset.filename[test_index][:-4].tolist())
-# save the fold
-        with open(output, 'wb') as l:
-        pickle.dump(folds,l)
-    else:
-# load
-        with open(output, 'rb') as l:
-        folds = pickle.load(l)
-
-# gets datasets, labels, dataloaders
-        for fold_index in range(0,len(folds)):
-            datasets,labels,dataloaders = get_train_test_set(folds, fold_index, data, dataset_transform)
-
-        
 """
 Implementing the Attention-based Multi Instance Learning Model Using Mammograms.
 
@@ -194,9 +75,6 @@ the number of images in your test set before having extracted patches.  In this 
 Output:
 :predicted label:  The predicted label for bag (cancer or no-cancer).
 :error: the error.
-
-Note: In future, instead of hardcoding the inputs for the above parameters, consider using something like int(input('enter desired number')),
-may be more user friendly and allow for more flexibility as you work with different datasets.
 
 """
 
