@@ -64,7 +64,8 @@ Please put your code into the structure
 
 
 # Model Training - David
-## 1. Dataset
+
+1. Dataset
 	- Pytorch dataset class
 		- data: data dictionary for patches and bag label by patient, where patches are stored in img key. In the form: data['imgs'], data['label'].
 		- patients: patients to be used.
@@ -80,7 +81,7 @@ Please put your code into the structure
 		- data: data dictionary for patches and bag label by patient, where patches are stored in img key. In the form: data['imgs'], data['label'].
 		- dataset_transform: transforms train and test set.
 
-## 2. Form Bags
+2. Form Bags
 	- Set path to images, clinical dataframe, home folder.
 	- Balance clinical dataset.
 	- Preprocess images.
@@ -100,32 +101,32 @@ Please put your code into the structure
 		- num_bags_train: This contains the number of bags in the training model, which can also be interpreted as the number of images in your training set before having extracted patches.  For balanced athena dataset set to 522.
 		- num_bags_test: This contains the number of bags in the test model, which can also be interpreted as the number of images in your test set before having extracted patches.  For balanced athena dataset set to 58.
 
-## 3. Attention-based Deep Multiple Instance Learning Model 
-		- Pytorch neural network module.
-		- modified LeNet-5 model.
-		- Implementation influenced by Ilse et al. (2018).
-		- self.L: embedding size for bag.
-		- self.D: hidden embedding size for bag features.
-		- self.K: number of classes, 1 for breast cancer detection.
+3. Attention-based Deep Multiple Instance Learning Model 
+	- Pytorch neural network module.
+	- modified LeNet-5 model.
+	- Implementation influenced by Ilse et al. (2018).
+	- self.L: embedding size for bag.
+	- self.D: hidden embedding size for bag features.
+	- self.K: number of classes, 1 for breast cancer detection.
 
-## 4. Main
-		- epochs: number of epochs to train model.
-		- learning rate: learning rate to train model.
-		- weight decay: weight decay to train model.
-		- target number: the desired bag label number. In this project, use 1, as bags have a positive label (1) if they contain at least 1 cancerous patch or a negative label (0) if they do not contain any cancerous patches. The aim of our model is to predict this target number (the bag label).
-		- number_of_patches: the desired number of patches.  In this project, we extracted 50 patches of size 128 x 128 from the image after it was segmented.  These number of patches (50) are contained within one bag.
-		- variance_of_number_patches: the desired variance for the number of patches.  In this project, we set to 0 because we have a fixed number of patches extracted from the image which are contained within one bag.
-		- num_bags_train: This contains the number of bags in the training model, which can also be interpreted as the number of images in your training set before having extracted patches.  In this project, we set to 522.
-		- num_bags_test: This contains the number of bags in the test model, which can also be interpreted as the number of images in your test set before having extracted patches.  In this project, we set to 58.
-		- seed: set random seed.
-		- no-cuda: disables CUDA training.
+4. Main
+	- epochs: number of epochs to train model.
+	- learning rate: learning rate to train model.
+	- weight decay: weight decay to train model.
+	- target number: the desired bag label number. In this project, use 1, as bags have a positive label (1) if they contain at least 1 cancerous patch or a negative label (0) if they do not contain any cancerous patches. The aim of our model is to predict this target number (the bag label).
+	- number_of_patches: the desired number of patches.  In this project, we extracted 50 patches of size 128 x 128 from the image after it was segmented.  These number of patches (50) are contained within one bag.
+	- variance_of_number_patches: the desired variance for the number of patches.  In this project, we set to 0 because we have a fixed number of patches extracted from the image which are contained within one bag.
+	- num_bags_train: This contains the number of bags in the training model, which can also be interpreted as the number of images in your training set before having extracted patches.  In this project, we set to 522.
+	- num_bags_test: This contains the number of bags in the test model, which can also be interpreted as the number of images in your test set before having extracted patches.  In this project, we set to 58.
+	- seed: set random seed.
+	- no-cuda: disables CUDA training.
 		
-## 5. How to Use
+5. How to Use
 	- Run the following commands in jupyter notebook:
-		%run -i 'get_dataset.py'
-		%run -i 'model_attn_mil.py'
-		%run -i 'mg_bag_loader.py'
-		%run -i 'main.py'
+		- %run -i 'get_dataset.py'
+		- %run -i 'model_attn_mil.py'
+		- %run -i 'mg_bag_loader.py'
+		- %run -i 'main.py'
 
 
 # Model Deployment - Harry
