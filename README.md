@@ -1,16 +1,10 @@
-# be223c - Mammogram Classification
+# Mammogram Classification
 
 
 # Introduction
 
-Please put your code into the structure
 
-* Remember to document your code in Docstring manner
-
-* Remember to update your code running instruction here in your section
-
-
-# Data Preprocessing - Yannan
+# Data Preprocessing
 
 1. Data Cleaning
 	- Functions and methods
@@ -59,14 +53,7 @@ Please put your code into the structure
 		- Third, set paths for importing files and saving results.
 		- Fourth, run training, testing, evaluation, and post-processing blocks subsequently.
 
-# Model Training - Zichen
-
-
-
-# Model Training - David
-
-
-# Model Deployment - Harry
+# Model Deployment 
 
 ## 1. Tools
    Backend:Flask, Pytorch
