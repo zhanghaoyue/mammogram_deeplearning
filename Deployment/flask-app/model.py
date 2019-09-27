@@ -2,8 +2,8 @@ import sys
 import torch
 from torchvision import transforms
 import cv2
-import code_zichen.graph.model.model as module_arch
-from code_zichen.utils import preprocess
+import Model_code.graph.model.model as module_arch
+from Model_code.utils import preprocess
 import numpy as np
 from skimage import transform, io
 from PIL import Image
@@ -103,8 +103,8 @@ class Pytorchmodel:
 
 
 if __name__ == '__main__':
-    segmentation_model_path = './code_zichen/checkpoint/segmentation_model.pth'
-    classification_model_path = './code_zichen/checkpoint/classification_model.pth'
+    segmentation_model_path = './Model_code/checkpoint/segmentation_model.pth'
+    classification_model_path = './Model_code/checkpoint/classification_model.pth'
     model = Pytorchmodel(segmentation_model_path, classification_model_path)
     img_path = r'/home/harryzhang/Documents/athena_screen/images/fe22c324c0f00813c9ff635be1a62ed6.png'
     result = model.predict(img_path)

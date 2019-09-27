@@ -2,83 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94809da3-41b0-4d0a-ba3c-c4a7063fd535" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/be223c.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mammogram_deeplearning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/agent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/agent/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/agent/base_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/agent/base_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/agent/one_epoch_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/agent/one_epoch_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/agent/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/agent/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/agent/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/agent/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/checkpoint/classification_model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/checkpoint/classification_model.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/checkpoint/segmentation_model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/checkpoint/segmentation_model.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/dataloader/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/dataloader/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/dataloader/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/dataloader/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/dataloader/base_data_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/dataloader/base_data_loaders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/dataloader/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/dataloader/data_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/deployment/config_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/deployment/config_test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/deployment/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/deployment/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/loss/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/loss/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/loss/loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/loss/loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/metric/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/metric/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/metric/metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/metric/metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/model/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/model/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/model/.ipynb_checkpoints/model_define-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/model/.ipynb_checkpoints/model_define-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/model/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/model/Untitled.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/model/base_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/model/base_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/graph/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/graph/model/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/utils/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/utils/prepare_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/utils/prepare_device.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/utils/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/utils/preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/utils/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/utils/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/code_zichen/utils/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/Model_code/utils/visualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Deployment/flask-app/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/templates/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deployment/flask-app/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Deployment/flask-app/server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="428">
-                <caret line="109" column="4" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/templates/upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -111,93 +76,30 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Deployment/app/trained_model/__init__.py" />
-        <option value="$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
-        <option value="$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
-        <option value="$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
-        <option value="$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" />
-        <option value="$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
-        <option value="$PROJECT_DIR$/Deployment/app/model.py" />
-        <option value="$PROJECT_DIR$/Deployment/app/templates/upload.html" />
-        <option value="$PROJECT_DIR$/Deployment/requirement.txt" />
-        <option value="$PROJECT_DIR$/requirement.txt" />
-        <option value="$PROJECT_DIR$/Deployment/app/__init__.py" />
-        <option value="$PROJECT_DIR$/Deployment/src/server.py" />
-        <option value="$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/__init__.py" />
-        <option value="$PROJECT_DIR$/Deployment/Dockerfile" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/requirements.txt" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/helpdesk/requirement.txt" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/Dockerfile" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/wsgi.py" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/config.py" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/server.py" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/model.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/Deployment/flask-app/templates/upload.html" />
-      </list>
-    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../mammogram" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1987" />
-    <option name="y" value="119" />
-    <option name="width" value="1657" />
-    <option name="height" value="1048" />
+    <option name="y" value="25" />
+    <option name="width" value="1853" />
+    <option name="height" value="1175" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
-              <item name="be223c" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
-              <item name="be223c" type="462c0819:PsiDirectoryNode" />
-              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
-              <item name="be223c" type="462c0819:PsiDirectoryNode" />
-              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
-              <item name="flask-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="be223c" type="b2602c69:ProjectViewProjectNode" />
-              <item name="be223c" type="462c0819:PsiDirectoryNode" />
-              <item name="Deployment" type="462c0819:PsiDirectoryNode" />
-              <item name="flask-app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1RRLqV9CoSM4DHVy0xTxhLMpMXA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../be224b" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -218,8 +120,54 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.wsgi">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="be223c" />
+      <module name="Mammogram_deeplearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -240,8 +188,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="be223c" />
+      <module name="Mammogram_deeplearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -263,7 +233,7 @@
       <method v="2" />
     </configuration>
     <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="be223c" />
+      <module name="Mammogram_deeplearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -282,6 +252,66 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="Mammogram_deeplearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -307,12 +337,11 @@
       <workItem from="1560207878960" duration="1691000" />
       <workItem from="1560279669360" duration="16545000" />
       <workItem from="1560354426843" duration="17504000" />
-      <workItem from="1560451446339" duration="2539000" />
+      <workItem from="1560451446339" duration="3179000" />
+      <workItem from="1563487038142" duration="650000" />
+      <workItem from="1569625154168" duration="596000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57568000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,185 +352,27 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="1987" y="25" width="1853" height="1175" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26342005" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" order="0" weight="0.3298279" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Python Console" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5002767" side_tool="true" weight="0.3298279" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.3298279" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997233" weight="0.3298279" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.3298279" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="SciView" order="4" weight="0.14775872" />
-      <window_info anchor="right" id="Database" order="5" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24958494" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Python Console" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.3298279" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.3298279" />
-      <window_info anchor="right" id="Remote Host" order="0" />
-      <window_info anchor="right" id="SciView" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update code structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="update code structure" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/be223c$test.coverage" NAME="test Coverage Results" MODIFIED="1560291804491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app/code_zichen/deployment" />
-    <SUITE FILE_PATH="coverage/be223c$wsgi.coverage" NAME="wsgi Coverage Results" MODIFIED="1560382458434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/flask-app" />
     <SUITE FILE_PATH="coverage/be223c$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1560298128927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/app" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Deployment/app/config.py" />
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/torch/serialization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="228" column="23" selection-start-line="228" selection-start-column="23" selection-end-line="228" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/base_model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/trained_model/model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/front_page.html" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/team_member.html" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/graph/model/base_model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/asset/0a4c9c21d3666deb33fa50d6991e9d6b.png" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/utils/preprocess.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/deployment/test.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/code_zichen/dataloader/base_data_loaders.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/templates/upload.html" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/server.py" />
-    <entry file="file://$PROJECT_DIR$/requirement.txt" />
-    <entry file="file://$PROJECT_DIR$/Deployment/requirement.txt" />
-    <entry file="file://$PROJECT_DIR$/Deployment/app/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/src/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/src/model.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/src/server.py" />
-    <entry file="file://$PROJECT_DIR$/Deployment/conf/gunicorn_conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/Dockerfile" />
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/helpdesk/requirement.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="428">
-            <caret line="109" column="4" lean-forward="true" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Deployment/flask-app/templates/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <SUITE FILE_PATH="coverage/be223c$wsgi.coverage" NAME="wsgi Coverage Results" MODIFIED="1560382458434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Deployment/flask-app" />
   </component>
 </project>

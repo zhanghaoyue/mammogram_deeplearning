@@ -12,7 +12,7 @@ from werkzeug.utils import secure_filename
 from model import Pytorchmodel
 
 
-zichen_model_dir = os.path.join(os.getcwd(), r'code_zichen')
+zichen_model_dir = os.path.join(os.getcwd(), r'Model_code')
 sys.path.insert(0, zichen_model_dir)
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 print(sys.path)
@@ -23,8 +23,8 @@ app.config.from_object(config)
 photos = UploadSet('PHOTO')
 configure_uploads(app, photos)
 
-segmentation_model_path = './code_zichen/checkpoint/segmentation_model.pth'
-classification_model_path = './code_zichen/checkpoint/classification_model.pth'
+segmentation_model_path = './Model_code/checkpoint/segmentation_model.pth'
+classification_model_path = './Model_code/checkpoint/classification_model.pth'
 model = Pytorchmodel(segmentation_model_path, classification_model_path)
 
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/be223c.iml" filepath="$PROJECT_DIR$/.idea/be223c.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mammogram/.idea/Mammogram_deeplearning.iml" filepath="$PROJECT_DIR$/../mammogram/.idea/Mammogram_deeplearning.iml" />
     </modules>
   </component>
 </project>
