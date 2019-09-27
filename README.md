@@ -1,16 +1,10 @@
-# be223c - Mammogram Classification
+# Mammogram Classification
 
 
 # Introduction
 
-Please put your code into the structure
 
-* Remember to document your code in Docstring manner
-
-* Remember to update your code running instruction here in your section
-
-
-# Data Preprocessing - Yannan
+# Data Preprocessing
 
 1. Data Cleaning
 	- Functions and methods
@@ -59,139 +53,7 @@ Please put your code into the structure
 		- Third, set paths for importing files and saving results.
 		- Fourth, run training, testing, evaluation, and post-processing blocks subsequently.
 
-# Model Training - Zichen
-
-## Requirements
-* Python >= 3.5
-* PyTorch >= 1.0.0
-* tensorboard >= 1.7.0
-* tensorboardX >= 1.2
-
-## Code structure
-    Model_Training/Training_Zichen/
-    ├── agent  # Information flow controller
-    │   ├── base_trainer.py  # model trainer for INBreast dataset
-    │   ├── base_trainer_UCLA.py # model trainer for UCLA dataset
-    │   ├── __init__.py
-    │   ├── one_epoch_trainer.py
-    │   ├── one_epoch_trainer_UCLA.py
-    │   ├── run.sh 
-    │   ├── run_UCLA.sh
-    │   ├── train.py  # main script to start training
-    │   └── train_UCLA.py
-    ├── config  # json config file support for convenient parameter tuning.
-    │   ├── config.json  # holds configuration for training
-    │   └── config_UCLA.json
-    ├── dataloader  # data loading
-    │   ├── base_data_loaders.py
-    │   ├── data_loader.py
-    │   └── __init__.py
-    ├── graph  # models and evaluation metrics
-    │   ├── metric
-    │   │   ├── __init__.py
-    │   │   └── metric.py
-    │   └── model
-    │       ├── base_model.py
-    │       ├── __init__.py
-    │       └── model.py
-    └── utils  # utility functions
-        ├── __init__.py
-        ├── logger.py
-        ├── prepare_device.py
-        ├── preprocess.py
-        ├── util.py
-        └── visualization.py
-        
-## Usage
-Try `python train.py -c config.json` or `sh run.sh` to run code.
-
-### Using config files
-Modify the configurations in `.json` config files, then run:
-
-  ```
-  python train.py --config config.json
-  ```
-  
-### Using Multiple GPU
-Enable multi-GPU training by setting `n_gpu` argument of the config file to larger number.
-First n devices will be used by default if configured to use smaller number of gpu than available.
-You can specify indices of available GPUs by cuda environmental variable.
-  ```
-  python train.py --device 2,3 -c config.json
-  ```
-  This is equivalent to
-  ```
-  CUDA_VISIBLE_DEVICES=2,3 python train.py -c config.py
-  ```
-
-
-# Model Training - David
-
-1. Dataset
-	- Pytorch dataset class
-		- data: data dictionary for patches and bag label by patient, where patches are stored in img key. In the form: data['imgs'], data['label'].
-		- patients: patients to be used.
-		- transform: the transform for the data.
-		- datasetType: the type of the data, train or test.
-	- Show images function
-		- images: List of np.arrays compatible with plt.imshow (good for viewing patches from single image).
-		- cols (Default = 1): Number of columns in figure (number of rows is set to np.ceil(n_images/float(cols))).
-		- titles: List of titles corresponding to each patch. Must have the same length as titles.
-	- Train test split function
-		- folds: number of folds.
-		- fold_index: index for folds. 
-		- data: data dictionary for patches and bag label by patient, where patches are stored in img key. In the form: data['imgs'], data['label'].
-		- dataset_transform: transforms train and test set.
-
-2. Form Bags
-	- Set path to images, clinical dataframe, home folder.
-	- Balance clinical dataset.
-	- Preprocess images.
-	- Extract patches.
-	- Data dictionary.
-	- Data transform.
-	- Folds.
-	- Form bags
-		- Pytorch dataset object that loads balanced mammogram dataset in bag form.
-		- implementation influenced by Ilse et al. (2018).
-		- target number: The desired bag label number. In this project, use 1, as bags have a positive label (1) if they contain at least 1 cancerous patch or a negative label (0) if they do not contain any cancerous patches. The aim of our model is to predict this target number (the bag label).
-		- number of patches: The desired number of patches.  In this project, we extracted 50 patches of size 128 x 128 from the image after it was segmented.  These number of patches (50) are contained within one bag.The form bag function we adapted does not generally support more than 10 instances per bag; however, it works for 50.
-		- variance of number patches: the desired variance for the number of patches.  In this project, we set to 0 because we have a fixed number of patches extracted from the image which are contained within one bag.
-		- number of bags: The number of bags in total model, which is the combined number of training bags and testing bags.
-		- seed: Set random seed.
-		- train: Train.
-		- num_bags_train: This contains the number of bags in the training model, which can also be interpreted as the number of images in your training set before having extracted patches.  For balanced athena dataset set to 522.
-		- num_bags_test: This contains the number of bags in the test model, which can also be interpreted as the number of images in your test set before having extracted patches.  For balanced athena dataset set to 58.
-
-3. Attention-based Deep Multiple Instance Learning Model 
-	- Pytorch neural network module.
-	- modified LeNet-5 model.
-	- Implementation influenced by Ilse et al. (2018).
-	- self.L: embedding size for bag.
-	- self.D: hidden embedding size for bag features.
-	- self.K: number of classes, 1 for breast cancer detection.
-
-4. Main
-	- epochs: number of epochs to train model.
-	- learning rate: learning rate to train model.
-	- weight decay: weight decay to train model.
-	- target number: the desired bag label number. In this project, use 1, as bags have a positive label (1) if they contain at least 1 cancerous patch or a negative label (0) if they do not contain any cancerous patches. The aim of our model is to predict this target number (the bag label).
-	- number_of_patches: the desired number of patches.  In this project, we extracted 50 patches of size 128 x 128 from the image after it was segmented.  These number of patches (50) are contained within one bag.
-	- variance_of_number_patches: the desired variance for the number of patches.  In this project, we set to 0 because we have a fixed number of patches extracted from the image which are contained within one bag.
-	- num_bags_train: This contains the number of bags in the training model, which can also be interpreted as the number of images in your training set before having extracted patches.  In this project, we set to 522.
-	- num_bags_test: This contains the number of bags in the test model, which can also be interpreted as the number of images in your test set before having extracted patches.  In this project, we set to 58.
-	- seed: set random seed.
-	- no-cuda: disables CUDA training.
-		
-5. How to Use
-	- Run the following commands in jupyter notebook:
-		- %run -i 'get_dataset.py'
-		- %run -i 'model_attn_mil.py'
-		- %run -i 'mg_bag_loader.py'
-		- %run -i 'main.py'
-
-
-# Model Deployment - Harry
+# Model Deployment 
 
 ## 1. Tools
    Backend:Flask, Pytorch
@@ -226,8 +88,6 @@ You can specify indices of available GPUs by cuda environmental variable.
 This is recommended because the base image is from Nvidia
 and it is very big (7Gb), it's faster to directly build
 than transfer the image.
-
-pull the base image from nvcr.io/nvidia/pytorch:19.01-py3
 
 Run the cmd from terminal in flask-app folder
     
